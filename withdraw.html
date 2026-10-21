@@ -1,274 +1,275 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Withdrawals | Aurex Capital</title>
 
-    <title>Withdraw | Aurex Capital</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: Arial, sans-serif;
-        }
+    body {
+      font-family: Arial, sans-serif;
+      background: #071426;
+      color: #ffffff;
+      min-height: 100vh;
+      line-height: 1.6;
+    }
 
-        body {
-            background: #071426;
-            color: #ffffff;
-            min-height: 100vh;
-        }
+    header {
+      background: #0c1e35;
+      padding: 22px 7%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 15px;
+      border-bottom: 1px solid #c9a84c;
+    }
 
-        header {
-            background: #10243e;
-            padding: 20px;
-            border-bottom: 1px solid #d9b45b;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 15px;
-        }
+    .logo {
+      color: #e4c66b;
+      font-size: 23px;
+      font-weight: bold;
+      letter-spacing: 1px;
+    }
 
-        .logo {
-            color: #d9b45b;
-            font-size: 22px;
-            font-weight: bold;
-        }
+    nav {
+      display: flex;
+      gap: 18px;
+      flex-wrap: wrap;
+    }
 
-        nav a {
-            color: #d9b45b;
-            text-decoration: none;
-            margin-left: 15px;
-            font-size: 14px;
-        }
+    nav a {
+      color: #ffffff;
+      text-decoration: none;
+      font-size: 14px;
+    }
 
-        .container {
-            width: 90%;
-            max-width: 480px;
-            margin: 45px auto;
-            padding: 30px 25px;
-            background: #10243e;
-            border: 1px solid #c9a54c;
-            border-radius: 14px;
-        }
+    nav a:hover {
+      color: #e4c66b;
+    }
 
-        h1 {
-            color: #d9b45b;
-            text-align: center;
-            margin-bottom: 12px;
-        }
+    .container {
+      width: 90%;
+      max-width: 650px;
+      margin: 55px auto;
+    }
 
-        .subtitle {
-            text-align: center;
-            color: #aebaca;
-            font-size: 14px;
-            line-height: 1.6;
-            margin-bottom: 25px;
-        }
+    .card {
+      background: #10233c;
+      border: 1px solid #29415d;
+      border-radius: 16px;
+      padding: 32px;
+      box-shadow: 0 12px 35px rgba(0, 0, 0, 0.2);
+    }
 
-        .notice {
-            background: #192b40;
-            border: 1px solid #c9a54c;
-            border-radius: 7px;
-            padding: 12px;
-            color: #f0d58b;
-            font-size: 12px;
-            line-height: 1.6;
-            margin-bottom: 25px;
-        }
+    .tag {
+      color: #e4c66b;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      font-size: 12px;
+      margin-bottom: 10px;
+    }
 
-        label {
-            display: block;
-            margin-bottom: 8px;
-            color: #e1e6ee;
-            font-size: 14px;
-        }
+    h1 {
+      font-size: 32px;
+      margin-bottom: 12px;
+    }
 
-        input, select {
-            width: 100%;
-            padding: 13px;
-            margin-bottom: 20px;
-            background: #09182b;
-            border: 1px solid #344963;
-            border-radius: 7px;
-            color: #ffffff;
-            font-size: 14px;
-        }
+    .intro {
+      color: #c5d0df;
+      margin-bottom: 28px;
+    }
 
-        input:focus, select:focus {
-            outline: none;
-            border-color: #d9b45b;
-        }
+    label {
+      display: block;
+      margin: 18px 0 8px;
+      font-size: 14px;
+      font-weight: bold;
+    }
 
-        button {
-            width: 100%;
-            padding: 14px;
-            background: #d9b45b;
-            color: #071426;
-            border: none;
-            border-radius: 7px;
-            font-weight: bold;
-            font-size: 15px;
-            cursor: pointer;
-        }
+    input,
+    select {
+      width: 100%;
+      padding: 14px;
+      border: 1px solid #354d69;
+      border-radius: 8px;
+      background: #071426;
+      color: #ffffff;
+      font-size: 15px;
+      outline: none;
+    }
 
-        button:hover {
-            background: #edcc79;
-        }
+    input:focus,
+    select:focus {
+      border-color: #e4c66b;
+    }
 
-        #message {
-            margin-top: 18px;
-            color: #f0d58b;
-            font-size: 13px;
-            line-height: 1.7;
-            text-align: center;
-        }
+    .button {
+      display: block;
+      width: 100%;
+      padding: 14px;
+      margin-top: 24px;
+      background: #c9a84c;
+      color: #071426;
+      border: none;
+      border-radius: 8px;
+      font-size: 16px;
+      font-weight: bold;
+      cursor: pointer;
+    }
 
-        .back {
-            display: block;
-            text-align: center;
-            color: #d9b45b;
-            text-decoration: none;
-            margin-top: 22px;
-            font-size: 14px;
-        }
+    .button:hover {
+      background: #e4c66b;
+    }
 
-        footer {
-            text-align: center;
-            color: #8291a5;
-            padding: 25px 15px;
-            font-size: 12px;
-            line-height: 1.7;
-        }
+    .notice {
+      margin-top: 24px;
+      padding: 18px;
+      background: #0c1e35;
+      border-left: 4px solid #c9a84c;
+      border-radius: 8px;
+      color: #c5d0df;
+      font-size: 13px;
+    }
 
-        @media (max-width: 480px) {
-            header {
-                flex-direction: column;
-                align-items: flex-start;
-            }
+    .links {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 18px;
+      margin-top: 25px;
+    }
 
-            nav a {
-                margin-left: 0;
-                margin-right: 12px;
-            }
+    .links a {
+      color: #e4c66b;
+      text-decoration: none;
+    }
 
-            .container {
-                padding: 25px 18px;
-            }
-        }
-    </style>
+    footer {
+      text-align: center;
+      padding: 25px 15px;
+      margin-top: 50px;
+      background: #0c1e35;
+      border-top: 1px solid #263b54;
+      color: #aebdd0;
+      font-size: 13px;
+    }
+
+    @media (max-width: 600px) {
+      header {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      nav {
+        justify-content: center;
+      }
+
+      .card {
+        padding: 23px;
+      }
+    }
+  </style>
 </head>
 
 <body>
 
-<header>
+  <header>
     <div class="logo">AUREX CAPITAL</div>
 
     <nav>
-        <a href="index.html">Home</a>
-        <a href="dashboard.html">Dashboard</a>
-        <a href="investments.html">Plans</a>
+      <a href="index.html">Home</a>
+      <a href="dashboard.html">Dashboard</a>
+      <a href="investments.html">Investments</a>
+      <a href="deposit.html">Deposits</a>
+      <a href="profile.html">Profile</a>
     </nav>
-</header>
+  </header>
 
-<main class="container">
+  <main class="container">
+    <section class="card">
 
-    <h1>Withdraw</h1>
+      <div class="tag">Account Services</div>
+      <h1>Withdraw Funds</h1>
 
-    <p class="subtitle">
-        Preview a withdrawal request using the Aurex Capital
-        demonstration interface.
-    </p>
+      <p class="intro">
+        Review your withdrawal details. All amounts are displayed
+        in United States dollars (USD).
+      </p>
 
-    <div class="notice">
-        <strong>DEMO MODE:</strong>
-        This page does not hold funds or process withdrawals.
-        Do not enter real banking details or sensitive financial information.
-    </div>
-
-    <form id="withdrawForm">
+      <form id="withdrawForm">
 
         <label for="amount">Withdrawal Amount (USD)</label>
-
         <input
-            type="number"
-            id="amount"
-            placeholder="Example: 50"
-            min="1"
-            max="1000000"
-            step="0.01"
-            required
+          type="number"
+          id="amount"
+          min="1"
+          step="0.01"
+          placeholder="Enter amount in USD"
+          required
         >
 
-        <label for="method">Example Withdrawal Method</label>
-
+        <label for="method">Preferred Withdrawal Method</label>
         <select id="method" required>
-            <option value="">Select a method</option>
-            <option value="Bank Transfer">Bank Transfer (Demo)</option>
-            <option value="Digital Wallet">Digital Wallet (Demo)</option>
-            <option value="Cryptocurrency">Cryptocurrency (Demo)</option>
+          <option value="">Select a withdrawal method</option>
+          <option value="Bank Transfer">Bank Transfer</option>
+          <option value="Other">Other</option>
         </select>
 
-        <label for="accountName">Example Account Holder Name</label>
+        <button class="button" type="submit">
+          Review Withdrawal Request
+        </button>
 
-        <input
-            type="text"
-            id="accountName"
-            placeholder="Example: Demo User"
-            maxlength="60"
-            required
-        >
+      </form>
 
-        <button type="submit">Preview Withdrawal</button>
+      <div class="notice">
+        <strong style="color:#e4c66b;">Important Information</strong>
+        <p>
+          This form does not transfer money or submit a real
+          withdrawal request. Account balances are not checked,
+          and no transaction is created. Secure account services
+          and appropriate authorization are required before
+          real withdrawals can be processed.
+        </p>
+      </div>
 
-        <p id="message" role="status"></p>
+      <div class="links">
+        <a href="dashboard.html">Back to Dashboard</a>
+        <a href="deposit.html">Deposits</a>
+        <a href="index.html">Home</a>
+      </div>
 
-    </form>
+    </section>
+  </main>
 
-    <a class="back" href="dashboard.html">
-        ← Back to Dashboard
-    </a>
-
-</main>
-
-<footer>
+  <footer>
     &copy; 2026 Aurex Capital. All rights reserved.
-    <br>
-    Demonstration only. No real withdrawals are processed.
-</footer>
+  </footer>
 
-<script>
+  <script>
     document.getElementById("withdrawForm").addEventListener("submit", function(event) {
-        event.preventDefault();
+      event.preventDefault();
 
-        const amount = Number(document.getElementById("amount").value);
-        const method = document.getElementById("method").value;
-        const accountName = document.getElementById("accountName").value.trim();
-        const message = document.getElementById("message");
+      const amount = Number(document.getElementById("amount").value);
+      const method = document.getElementById("method").value;
 
-        if (!Number.isFinite(amount) || amount <= 0 || amount > 1000000) {
-            message.textContent =
-                "Enter a valid example amount between $1 and $1,000,000.";
-            return;
-        }
+      if (!Number.isFinite(amount) || amount <= 0 || !method) {
+        alert("Please enter a valid amount and select a withdrawal method.");
+        return;
+      }
 
-        if (!accountName) {
-            message.textContent = "Enter an example account holder name.";
-            return;
-        }
-
-        message.textContent =
-            "DEMONSTRATION PREVIEW: $" +
-            amount.toLocaleString("en-US", {
-                minimumFractionDigits: 2,
-                maximumFractionDigits: 2
-            }) +
-            " USD via " + method +
-            ". No withdrawal request was submitted and no money was transferred.";
+      alert(
+        "Your withdrawal details have been reviewed on this page. " +
+        "No money was transferred and no transaction was created."
+      );
     });
-</script>
+  </script>
 
 </body>
-  </html>
+</html>
