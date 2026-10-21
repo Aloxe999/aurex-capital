@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Aurex Capital | Financial Growth</title>
+
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: #081426;
+  color: white;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 22px 8%;
+  border-bottom: 1px solid #26354a;
+}
+
+.logo {
+  color: #dfbd69;
+  font-size: 23px;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  margin-left: 20px;
+  font-size: 14px;
+}
+
+.hero {
+  padding: 100px 8%;
+  background: linear-gradient(120deg, #081426, #142c49);
+}
+
+.label {
+  color: #dfbd69;
+  letter-spacing: 3px;
+  font-size: 12px;
+  margin-bottom: 22px;
+}
+
+h1 {
+  font-size: clamp(38px, 6vw, 65px);
+  line-height: 1.15;
+  max-width: 750px;
+  margin-bottom: 22px;
+}
+
+h1 span {
+  color: #dfbd69;
+}
+
+.hero p {
+  color: #b7c3d5;
+  max-width: 560px;
+  line-height: 1.8;
+  margin-bottom: 30px;
+}
+
+.button {
+  display: inline-block;
+  background: #dfbd69;
+  color: #081426;
+  padding: 15px 25px;
+  text-decoration: none;
+  border-radius: 4px;
+  font-weight: bold;
+}
+
+section {
+  padding: 70px 8%;
+}
+
+.section-title {
+  text-align: center;
+  margin-bottom: 35px;
+}
+
+.section-title h2 {
+  font-size: 32px;
+  margin-bottom: 12px;
+}
+
+.section-title p {
+  color: #b7c3d5;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 22px;
+}
+
+.card {
+  background: #102139;
+  border: 1px solid #293a52;
+  padding: 28px;
+  border-radius: 8px;
+}
+
+.card .icon {
+  font-size: 32px;
+  margin-bottom: 18px;
+}
+
+.card h3 {
+  color: #dfbd69;
+  margin-bottom: 12px;
+}
+
+.card p {
+  color: #b7c3d5;
+  line-height: 1.8;
+  font-size: 14px;
+}
+
+.about {
+  background: #102139;
+  text-align: center;
+}
+
+.about h2 {
+  font-size: 30px;
+  margin-bottom: 20px;
+}
+
+.about p {
+  color: #b7c3d5;
+  line-height: 1.9;
+  max-width: 750px;
+  margin: 0 auto 15px;
+}
+
+.notice {
+  max-width: 800px;
+  margin: 25px auto 0;
+  padding: 18px;
+  border: 1px solid #79683c;
+  color: #e4d8b4;
+  font-size: 13px;
+  line-height: 1.7;
+  text-align: left;
+}
+
+.contact {
+  text-align: center;
+}
+
+.contact p {
+  color: #b7c3d5;
+  margin: 15px 0 25px;
+}
+
+footer {
+  text-align: center;
+  padding: 25px;
+  border-top: 1px solid #26354a;
+  color: #9eacc0;
+  font-size: 12px;
+  line-height: 1.8;
+}
+
+@media (max-width: 600px) {
+  header {
+    padding: 20px 5%;
+    flex-direction: column;
+    gap: 18px;
+  }
+
+  nav a {
+    margin: 0 7px;
+  }
+
+  .hero {
+    padding: 75px 6%;
+  }
+
+  section {
+    padding: 55px 6%;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="logo">AUREX CAPITAL</div>
+  <nav>
+    <a href="#home">Home</a>
+    <a href="#services">Resources</a>
+    <a href="#about">About</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</header>
+
+<main>
+
+<section class="hero" id="home">
+  <div class="label">FINANCIAL KNOWLEDGE & OPPORTUNITY</div>
+
+  <h1>
+    Build Your Future With
+    <span>Informed Decisions.</span>
+  </h1>
+
+  <p>
+    Discover financial education, explore investment concepts,
+    and learn about the opportunities and risks involved in
+    building long-term financial security.
+  </p>
+
+  <a href="#services" class="button">Explore Our Resources</a>
+</section>
+
+<section id="services">
+  <div class="section-title">
+    <h2>Explore Our Resources</h2>
+    <p>Knowledge to help you make more informed financial decisions.</p>
+  </div>
+
+  <div class="cards">
+
+    <div class="card">
+      <div class="icon">📊</div>
+      <h3>Investment Education</h3>
+      <p>
+        Learn about investment products, financial markets,
+        diversification, and potential risks.
+      </p>
+    </div>
+
+    <div class="card">
+      <div class="icon">🎯</div>
+      <h3>Financial Planning</h3>
+      <p>
+        Explore financial goal-setting, saving strategies,
+        and long-term planning principles.
+      </p>
+    </div>
+
+    <div class="card">
+      <div class="icon">🛡️</div>
+      <h3>Risk Awareness</h3>
+      <p>
+        Understand the importance of research, transparency,
+        and evaluating risks before making financial decisions.
+      </p>
+    </div>
+
+  </div>
+</section>
+
+<section class="about" id="about">
+  <h2>About Aurex Capital</h2>
+
+  <p>
+    Aurex Capital is a financial information website concept
+    focused on investment education, financial awareness,
+    and informed decision-making.
+  </p>
+
+  <p>
+    Our aim is to make financial concepts easier to understand
+    and encourage responsible consideration of investment risks.
+  </p>
+
+  <div class="notice">
+    <strong>Important notice:</strong>
+    This website currently provides educational information only.
+    It does not accept deposits, operate investment accounts,
+    or promise financial returns. Investments can lose value.
+    Appropriate registration, regulatory permissions, secure
+    infrastructure, and payment arrangements must be established
+    before offering financial services or accepting customer funds.
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <h2>Contact Us</h2>
+
+  <p>
+    Official customer support information will be published here
+    once it is available.
+  </p>
+
+  <a href="#home" class="button">Back to Home</a>
+</section>
+
+</main>
+
+<footer>
+  <p>© <span id="year"></span> Aurex Capital. All rights reserved.</p>
+  <p>Educational information only. Not financial advice.</p>
+  <p>Investment involves risk.</p>
+</footer>
+
+<script>
+document.getElementById("year").textContent =
+  new Date().getFullYear();
+</script>
+
+</body>
+  </html>
