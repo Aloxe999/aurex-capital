@@ -3,7 +3,6 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
   <title>Login | Aurex Capital</title>
 
   <style>
@@ -15,7 +14,7 @@
 
     body {
       font-family: Arial, sans-serif;
-      background: #081426;
+      background: linear-gradient(135deg, #071426, #102441);
       color: #ffffff;
       min-height: 100vh;
       display: flex;
@@ -24,192 +23,164 @@
       padding: 20px;
     }
 
-    .login-container {
+    .login-card {
       width: 100%;
       max-width: 420px;
+      padding: 38px 30px;
+      background: #102039;
+      border: 1px solid rgba(217,181,104,0.35);
+      border-radius: 16px;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.3);
     }
 
     .logo {
       text-align: center;
-      color: #dfbd69;
-      font-size: 27px;
+      color: #d9b568;
+      font-size: 24px;
       font-weight: bold;
-      letter-spacing: 2px;
-      margin-bottom: 12px;
+      letter-spacing: 1px;
+      margin-bottom: 10px;
     }
 
     .subtitle {
       text-align: center;
-      color: #aab6c8;
-      margin-bottom: 30px;
+      color: #aebbd0;
       font-size: 14px;
-    }
-
-    .login-box {
-      background: #102139;
-      border: 1px solid #293a52;
-      border-radius: 12px;
-      padding: 32px 25px;
+      margin-bottom: 30px;
     }
 
     h1 {
-      font-size: 25px;
-      margin-bottom: 10px;
-    }
-
-    .description {
-      color: #aab6c8;
-      font-size: 14px;
+      text-align: center;
+      font-size: 27px;
       margin-bottom: 25px;
-      line-height: 1.6;
     }
 
     label {
       display: block;
-      font-size: 13px;
-      margin-bottom: 8px;
+      margin: 17px 0 8px;
+      font-size: 14px;
     }
 
     input {
       width: 100%;
-      padding: 14px;
-      margin-bottom: 20px;
-      border: 1px solid #40516a;
-      border-radius: 6px;
-      background: #081426;
+      padding: 13px;
+      border-radius: 7px;
+      border: 1px solid #34445c;
+      background: #071426;
       color: #ffffff;
       font-size: 15px;
+      outline: none;
     }
 
     input:focus {
-      outline: 2px solid #dfbd69;
+      border-color: #d9b568;
     }
 
     button {
       width: 100%;
-      padding: 15px;
-      background: #dfbd69;
-      color: #081426;
+      margin-top: 24px;
+      padding: 14px;
+      background: #d9b568;
+      color: #071426;
       border: none;
-      border-radius: 6px;
-      font-size: 15px;
+      border-radius: 7px;
+      font-size: 16px;
       font-weight: bold;
       cursor: pointer;
     }
 
     button:hover {
-      background: #efd28b;
-    }
-
-    .register {
-      text-align: center;
-      color: #aab6c8;
-      font-size: 14px;
-      margin-top: 24px;
-    }
-
-    .register a,
-    .back a {
-      color: #dfbd69;
-      text-decoration: none;
-    }
-
-    .back {
-      text-align: center;
-      margin-top: 25px;
-      font-size: 14px;
+      background: #f0d28c;
     }
 
     .notice {
-      margin-top: 20px;
+      margin-top: 18px;
       padding: 12px;
-      border: 1px solid #40516a;
-      border-radius: 6px;
-      color: #aab6c8;
+      background: rgba(217,181,104,0.08);
+      border: 1px solid rgba(217,181,104,0.2);
+      border-radius: 7px;
+      color: #d9b568;
       font-size: 12px;
       line-height: 1.6;
+      text-align: center;
+    }
+
+    .links {
+      text-align: center;
+      margin-top: 23px;
+      font-size: 14px;
+      line-height: 2;
+    }
+
+    a {
+      color: #d9b568;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .home-link {
+      display: block;
+      text-align: center;
+      margin-top: 20px;
+      color: #aebbd0;
+      font-size: 13px;
     }
   </style>
 </head>
 
 <body>
 
-  <main class="login-container">
-
+  <main class="login-card">
     <div class="logo">AUREX CAPITAL</div>
 
-    <p class="subtitle">
-      Financial knowledge. Informed decisions.
-    </p>
+    <p class="subtitle">Your financial platform demonstration</p>
 
-    <div class="login-box">
+    <h1>Welcome Back</h1>
 
-      <h1>Welcome Back</h1>
+    <form id="loginForm">
+      <label for="email">Email Address</label>
+      <input
+        type="email"
+        id="email"
+        placeholder="Enter your email"
+        autocomplete="email"
+        required
+      >
 
-      <p class="description">
-        This is a preview of the Aurex Capital sign-in page.
-      </p>
+      <label for="password">Password</label>
+      <input
+        type="password"
+        id="password"
+        placeholder="Enter a demo password"
+        autocomplete="current-password"
+        required
+      >
 
-      <form id="loginForm">
+      <button type="submit">Explore Demo</button>
+    </form>
 
-        <label for="email">Email Address</label>
-
-        <input
-          type="email"
-          id="email"
-          placeholder="Enter your email"
-          autocomplete="email"
-          required
-        >
-
-        <label for="password">Password</label>
-
-        <input
-          type="password"
-          id="password"
-          placeholder="Enter your password"
-          autocomplete="current-password"
-          required
-        >
-
-        <button type="submit">Preview Sign In</button>
-
-      </form>
-
-      <p id="message"
-         role="status"
-         style="display:none; color:#dfbd69; margin-top:18px; font-size:13px; line-height:1.6;">
-      </p>
-
-      <div class="register">
-        New to Aurex Capital?
-        <a href="register.html">Create an account</a>
-      </div>
-
-      <div class="notice">
-        <strong>Demo only:</strong> This page does not authenticate users
-        or create sessions. Do not enter a real password. Secure sign-in
-        requires a trusted authentication service and backend.
-      </div>
-
+    <div class="notice">
+      DEMO ONLY: This form does not authenticate users or create
+      sessions. Do not enter a real password or sensitive information.
     </div>
 
-    <div class="back">
-      <a href="index.html">← Back to Homepage</a>
+    <div class="links">
+      New to Aurex Capital?
+      <a href="register.html">Explore Registration</a>
     </div>
 
+    <a class="home-link" href="index.html">← Back to Homepage</a>
   </main>
 
   <script>
     document.getElementById("loginForm").addEventListener("submit", function(event) {
       event.preventDefault();
-
-      document.getElementById("message").textContent =
-        "This is a design preview. Sign-in is not connected yet.";
-
-      document.getElementById("message").style.display = "block";
+      alert("This is a demonstration login form. Real authentication is not enabled.");
     });
   </script>
 
 </body>
-  </html>
+</html>
