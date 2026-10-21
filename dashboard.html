@@ -1,292 +1,441 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard | Aurex Capital</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: Arial, sans-serif;
-        }
+  <title>Dashboard | Aurex Capital</title>
 
-        body {
-            background: #071426;
-            color: #fff;
-        }
+  <style>
+    :root {
+      --navy: #071426;
+      --panel: #102039;
+      --gold: #d9b568;
+      --white: #ffffff;
+      --muted: #aebbd0;
+      --border: rgba(217,181,104,0.22);
+    }
 
-        header {
-            background: #10243e;
-            padding: 20px;
-            border-bottom: 1px solid #c9a54c;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 15px;
-        }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-        .logo {
-            color: #d9b45b;
-            font-size: 22px;
-            font-weight: bold;
-        }
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: var(--navy);
+      color: var(--white);
+      min-height: 100vh;
+    }
 
-        header a {
-            color: #d9b45b;
-            text-decoration: none;
-            margin-left: 15px;
-            font-size: 14px;
-        }
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
 
-        main {
-            max-width: 1100px;
-            margin: auto;
-            padding: 25px 18px;
-        }
+    header {
+      background: #09182c;
+      border-bottom: 1px solid var(--border);
+      padding: 20px 5%;
+    }
 
-        .welcome {
-            margin-bottom: 25px;
-        }
+    .topbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+    }
 
-        .welcome h1 {
-            font-size: 27px;
-            margin-bottom: 8px;
-        }
+    .logo {
+      color: var(--gold);
+      font-size: 21px;
+      font-weight: 800;
+      letter-spacing: 1px;
+    }
 
-        .welcome p {
-            color: #aebaca;
-            line-height: 1.5;
-        }
+    .top-link {
+      color: var(--muted);
+      font-size: 14px;
+    }
 
-        .notice {
-            background: #192b40;
-            border: 1px solid #c9a54c;
-            padding: 13px;
-            border-radius: 8px;
-            color: #f0d58b;
-            font-size: 13px;
-            line-height: 1.5;
-            margin-bottom: 25px;
-        }
+    .top-link:hover,
+    .menu a:hover {
+      color: var(--gold);
+    }
 
-        .cards {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 18px;
-            margin-bottom: 28px;
-        }
+    .layout {
+      display: grid;
+      grid-template-columns: 230px minmax(0, 1fr);
+      min-height: calc(100vh - 70px);
+    }
 
-        .card {
-            background: #10243e;
-            border: 1px solid #263c55;
-            border-radius: 12px;
-            padding: 23px;
-        }
+    aside {
+      padding: 30px 20px;
+      background: #09182c;
+      border-right: 1px solid var(--border);
+    }
 
-        .card h3 {
-            font-size: 14px;
-            font-weight: normal;
-            color: #aebaca;
-            margin-bottom: 15px;
-        }
+    .menu-title {
+      color: var(--muted);
+      font-size: 11px;
+      letter-spacing: 1.5px;
+      margin: 10px 12px 18px;
+    }
 
-        .amount {
-            color: #d9b45b;
-            font-size: 27px;
-            font-weight: bold;
-            overflow-wrap: anywhere;
-        }
+    .menu a {
+      display: block;
+      padding: 13px 12px;
+      margin-bottom: 7px;
+      border-radius: 7px;
+      font-size: 14px;
+      color: #d9e1ed;
+    }
 
-        .card p {
-            margin-top: 10px;
-            font-size: 12px;
-            color: #aebaca;
-        }
+    .menu a.active {
+      background: rgba(217,181,104,0.12);
+      color: var(--gold);
+      border: 1px solid var(--border);
+    }
 
-        .section {
-            background: #10243e;
-            border: 1px solid #263c55;
-            border-radius: 12px;
-            padding: 23px;
-            margin-bottom: 25px;
-        }
+    main {
+      padding: 38px;
+      min-width: 0;
+    }
 
-        .section h2 {
-            font-size: 20px;
-            margin-bottom: 18px;
-        }
+    .welcome {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+      flex-wrap: wrap;
+      margin-bottom: 30px;
+    }
 
-        .actions {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
-            gap: 12px;
-        }
+    .welcome h1 {
+      font-size: clamp(27px, 4vw, 36px);
+      margin-bottom: 8px;
+    }
 
-        .actions a {
-            display: block;
-            text-align: center;
-            text-decoration: none;
-            padding: 14px 10px;
-            background: #d9b45b;
-            color: #071426;
-            border-radius: 7px;
-            font-weight: bold;
-            font-size: 14px;
-        }
+    .welcome p {
+      color: var(--muted);
+      font-size: 14px;
+    }
 
-        .actions a:hover {
-            background: #edcc79;
-        }
+    .date-label {
+      color: var(--gold);
+      font-size: 12px;
+      padding: 10px 14px;
+      border: 1px solid var(--border);
+      border-radius: 7px;
+    }
 
-        .transactions {
-            color: #aebaca;
-            font-size: 14px;
-            line-height: 1.8;
-        }
+    .notice {
+      padding: 15px 18px;
+      margin-bottom: 25px;
+      border: 1px solid var(--border);
+      background: rgba(217,181,104,0.06);
+      border-radius: 9px;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.6;
+    }
 
-        .profile-row {
-            display: flex;
-            justify-content: space-between;
-            gap: 12px;
-            padding: 13px 0;
-            border-bottom: 1px solid #263c55;
-            overflow-wrap: anywhere;
-        }
+    .notice strong {
+      color: var(--gold);
+    }
 
-        .profile-row:last-child {
-            border-bottom: none;
-        }
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+      margin-bottom: 30px;
+    }
 
-        .profile-row span:first-child {
-            color: #aebaca;
-        }
+    .stat-card {
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 23px;
+      transition: 0.2s;
+    }
 
-        footer {
-            text-align: center;
-            color: #8291a5;
-            padding: 25px 15px;
-            font-size: 12px;
-        }
+    .stat-card:hover {
+      border-color: var(--gold);
+      transform: translateY(-3px);
+    }
 
-        @media (max-width: 480px) {
-            header {
-                align-items: flex-start;
-                flex-direction: column;
-            }
+    .stat-top {
+      display: flex;
+      justify-content: space-between;
+      gap: 10px;
+      color: var(--muted);
+      font-size: 13px;
+      margin-bottom: 20px;
+    }
 
-            header a {
-                margin-left: 0;
-                margin-right: 12px;
-            }
+    .stat-icon {
+      font-size: 21px;
+    }
 
-            .welcome h1 {
-                font-size: 23px;
-            }
+    .amount {
+      font-size: clamp(22px, 3vw, 30px);
+      font-weight: 800;
+      color: var(--gold);
+      overflow-wrap: anywhere;
+    }
 
-            .amount {
-                font-size: 24px;
-            }
-        }
-    </style>
+    .stat-description {
+      color: var(--muted);
+      font-size: 12px;
+      margin-top: 10px;
+    }
+
+    .section-heading {
+      font-size: 20px;
+      margin-bottom: 18px;
+    }
+
+    .quick-actions {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 14px;
+      margin-bottom: 32px;
+    }
+
+    .action {
+      padding: 20px 12px;
+      text-align: center;
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      font-size: 13px;
+      transition: 0.2s;
+    }
+
+    .action:hover {
+      border-color: var(--gold);
+      background: #152943;
+    }
+
+    .action-icon {
+      display: block;
+      font-size: 25px;
+      margin-bottom: 10px;
+    }
+
+    .activity-card {
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      overflow: hidden;
+    }
+
+    .activity-header {
+      padding: 20px;
+      border-bottom: 1px solid var(--border);
+      font-weight: bold;
+    }
+
+    .empty-state {
+      text-align: center;
+      padding: 35px 20px;
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.8;
+    }
+
+    .empty-state span {
+      display: block;
+      font-size: 32px;
+      margin-bottom: 10px;
+    }
+
+    footer {
+      padding: 25px 5%;
+      color: var(--muted);
+      border-top: 1px solid var(--border);
+      text-align: center;
+      font-size: 12px;
+      line-height: 1.8;
+    }
+
+    @media (max-width: 1000px) {
+      main {
+        padding: 25px;
+      }
+
+      .stats {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .quick-actions {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 650px) {
+      .layout {
+        grid-template-columns: 1fr;
+      }
+
+      aside {
+        padding: 12px;
+        border-right: none;
+        border-bottom: 1px solid var(--border);
+      }
+
+      .menu-title {
+        display: none;
+      }
+
+      .menu {
+        display: flex;
+        gap: 7px;
+        overflow-x: auto;
+      }
+
+      .menu a {
+        white-space: nowrap;
+        margin: 0;
+        padding: 11px;
+      }
+
+      main {
+        padding: 23px 16px;
+      }
+
+      .stats {
+        grid-template-columns: 1fr;
+      }
+
+      .stat-card {
+        padding: 20px;
+      }
+    }
+  </style>
 </head>
 
 <body>
 
 <header>
-    <div class="logo">AUREX CAPITAL</div>
-
-    <nav>
-        <a href="index.html">Home</a>
-        <a href="login.html">Login</a>
-        <a href="register.html">Register</a>
-    </nav>
+  <div class="topbar">
+    <a href="index.html" class="logo">AUREX CAPITAL</a>
+    <a href="profile.html" class="top-link">My Profile ↗</a>
+  </div>
 </header>
 
-<main>
+<div class="layout">
 
-    <section class="welcome">
-        <h1>Welcome to Your Dashboard</h1>
-        <p>Manage your account and explore the Aurex Capital platform.</p>
-    </section>
+  <aside>
+    <p class="menu-title">MAIN MENU</p>
 
-    <div class="notice">
-        DEMO ACCOUNT: All balances and transactions displayed here are examples.
-        No real money is held, deposited, or invested through this page.
+    <nav class="menu">
+      <a href="dashboard.html" class="active">▦ &nbsp; Dashboard</a>
+      <a href="investments.html">◇ &nbsp; Investment Plans</a>
+      <a href="deposit.html">＋ &nbsp; Deposit</a>
+      <a href="withdraw.html">↗ &nbsp; Withdraw</a>
+      <a href="profile.html">♙ &nbsp; My Profile</a>
+      <a href="index.html">⌂ &nbsp; Homepage</a>
+    </nav>
+  </aside>
+
+  <main>
+
+    <div class="welcome">
+      <div>
+        <h1>Account Overview</h1>
+        <p>Welcome to your Aurex Capital dashboard.</p>
+      </div>
+
+      <div class="date-label">ACCOUNT SUMMARY · USD ($)</div>
     </div>
 
-    <section class="cards">
+    <div class="notice">
+      <strong>Account information:</strong>
+      The figures below are sample display values.
+      Live balances, account records, and transaction processing
+      will require secure account services.
+    </div>
 
-        <div class="card">
-            <h3>Account Balance</h3>
-            <div class="amount">$0.00</div>
-            <p>Demonstration balance</p>
-        </div>
+    <section class="stats">
 
-        <div class="card">
-            <h3>Total Investments</h3>
-            <div class="amount">$0.00</div>
-            <p>Example investment total</p>
+      <div class="stat-card">
+        <div class="stat-top">
+          <span>Total Balance</span>
+          <span class="stat-icon">💰</span>
         </div>
+        <div class="amount">$0.00</div>
+        <p class="stat-description">Account balance summary</p>
+      </div>
 
-        <div class="card">
-            <h3>Total Earnings</h3>
-            <div class="amount">$0.00</div>
-            <p>No real earnings generated</p>
+      <div class="stat-card">
+        <div class="stat-top">
+          <span>Total Investments</span>
+          <span class="stat-icon">📈</span>
         </div>
+        <div class="amount">$0.00</div>
+        <p class="stat-description">Investment summary</p>
+      </div>
+
+      <div class="stat-card">
+        <div class="stat-top">
+          <span>Total Earnings</span>
+          <span class="stat-icon">✦</span>
+        </div>
+        <div class="amount">$0.00</div>
+        <p class="stat-description">Earnings summary</p>
+      </div>
 
     </section>
 
-    <section class="section">
-        <h2>Quick Actions</h2>
+    <h2 class="section-heading">Quick Actions</h2>
 
-        <div class="actions">
-            <a href="deposit.html">Deposit</a>
-            <a href="withdraw.html">Withdraw</a>
-            <a href="investments.html">Investment Plans</a>
-            <a href="profile.html">My Profile</a>
-        </div>
+    <section class="quick-actions">
+
+      <a href="deposit.html" class="action">
+        <span class="action-icon">＋</span>
+        Deposit
+      </a>
+
+      <a href="withdraw.html" class="action">
+        <span class="action-icon">↗</span>
+        Withdraw
+      </a>
+
+      <a href="investments.html" class="action">
+        <span class="action-icon">◇</span>
+        View Plans
+      </a>
+
+      <a href="profile.html" class="action">
+        <span class="action-icon">♙</span>
+        My Profile
+      </a>
+
     </section>
 
-    <section class="section">
-        <h2>Recent Transactions</h2>
+    <h2 class="section-heading">Recent Activity</h2>
 
-        <p class="transactions">
-            No transactions to display.<br>
-            Your demonstration transaction history will appear here
-            when a real backend is connected.
-        </p>
+    <section class="activity-card">
+      <div class="activity-header">Transaction History</div>
+
+      <div class="empty-state">
+        <span>📋</span>
+        <p>No transactions to display.</p>
+        <p>Transaction history will appear here when connected to a secure account system.</p>
+      </div>
     </section>
 
-    <section class="section">
-        <h2>Account Information</h2>
+  </main>
 
-        <div class="profile-row">
-            <span>Account Name</span>
-            <span>Demo User</span>
-        </div>
-
-        <div class="profile-row">
-            <span>Account Status</span>
-            <span>Demo</span>
-        </div>
-
-        <div class="profile-row">
-            <span>Platform</span>
-            <span>Aurex Capital</span>
-        </div>
-    </section>
-
-</main>
+</div>
 
 <footer>
-    &copy; 2026 Aurex Capital. All rights reserved.
-    <br><br>
-    Demonstration website only. No financial services are provided.
+  <p><strong>AUREX CAPITAL</strong></p>
+  <p>Account figures are illustrative. No live balances or financial transactions are processed by this page.</p>
+  <p>© 2026 Aurex Capital. All rights reserved.</p>
 </footer>
 
 </body>
-          </html>
+</html>
