@@ -1,313 +1,588 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Aurex Capital | Financial Growth</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<style>
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+    <meta name="description" content="Discover Aurex Capital, a financial platform demonstration featuring account dashboards and investment information.">
 
-body {
-  font-family: Arial, sans-serif;
-  background: #081426;
-  color: white;
-}
+    <title>Aurex Capital | Welcome</title>
 
-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 22px 8%;
-  border-bottom: 1px solid #26354a;
-}
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
 
-.logo {
-  color: #dfbd69;
-  font-size: 23px;
-  font-weight: bold;
-  letter-spacing: 1px;
-}
+        html {
+            scroll-behavior: smooth;
+        }
 
-nav a {
-  color: white;
-  text-decoration: none;
-  margin-left: 20px;
-  font-size: 14px;
-}
+        body {
+            background: #071426;
+            color: #ffffff;
+            line-height: 1.6;
+        }
 
-.hero {
-  padding: 100px 8%;
-  background: linear-gradient(120deg, #081426, #142c49);
-}
+        header {
+            background: #0b1b30;
+            border-bottom: 1px solid #c9a54c;
+            padding: 20px 7%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
 
-.label {
-  color: #dfbd69;
-  letter-spacing: 3px;
-  font-size: 12px;
-  margin-bottom: 22px;
-}
+        .logo {
+            color: #d9b45b;
+            font-size: 23px;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
 
-h1 {
-  font-size: clamp(38px, 6vw, 65px);
-  line-height: 1.15;
-  max-width: 750px;
-  margin-bottom: 22px;
-}
+        nav {
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 18px;
+        }
 
-h1 span {
-  color: #dfbd69;
-}
+        nav a {
+            color: #e1e6ee;
+            text-decoration: none;
+            font-size: 14px;
+        }
 
-.hero p {
-  color: #b7c3d5;
-  max-width: 560px;
-  line-height: 1.8;
-  margin-bottom: 30px;
-}
+        nav a:hover {
+            color: #d9b45b;
+        }
 
-.button {
-  display: inline-block;
-  background: #dfbd69;
-  color: #081426;
-  padding: 15px 25px;
-  text-decoration: none;
-  border-radius: 4px;
-  font-weight: bold;
-}
+        .nav-button {
+            padding: 10px 16px;
+            border-radius: 6px;
+            background: #d9b45b;
+            color: #071426;
+            font-weight: bold;
+        }
 
-section {
-  padding: 70px 8%;
-}
+        .hero {
+            min-height: 570px;
+            padding: 90px 7%;
+            display: flex;
+            align-items: center;
+            background:
+                radial-gradient(
+                    circle at 80% 30%,
+                    rgba(201, 165, 76, 0.13),
+                    transparent 35%
+                ),
+                linear-gradient(135deg, #071426, #10243e);
+        }
 
-.section-title {
-  text-align: center;
-  margin-bottom: 35px;
-}
+        .hero-content {
+            max-width: 720px;
+        }
 
-.section-title h2 {
-  font-size: 32px;
-  margin-bottom: 12px;
-}
+        .eyebrow {
+            color: #d9b45b;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            font-size: 12px;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
 
-.section-title p {
-  color: #b7c3d5;
-}
+        .hero h1 {
+            font-size: clamp(38px, 6vw, 66px);
+            line-height: 1.12;
+            margin-bottom: 25px;
+        }
 
-.cards {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 22px;
-}
+        .hero h1 span {
+            color: #d9b45b;
+        }
 
-.card {
-  background: #102139;
-  border: 1px solid #293a52;
-  padding: 28px;
-  border-radius: 8px;
-}
+        .hero p {
+            color: #b9c4d3;
+            max-width: 600px;
+            font-size: 17px;
+            margin-bottom: 32px;
+        }
 
-.card .icon {
-  font-size: 32px;
-  margin-bottom: 18px;
-}
+        .buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 14px;
+        }
 
-.card h3 {
-  color: #dfbd69;
-  margin-bottom: 12px;
-}
+        .button {
+            display: inline-block;
+            padding: 14px 23px;
+            border-radius: 7px;
+            text-decoration: none;
+            font-weight: bold;
+            text-align: center;
+        }
 
-.card p {
-  color: #b7c3d5;
-  line-height: 1.8;
-  font-size: 14px;
-}
+        .primary {
+            background: #d9b45b;
+            color: #071426;
+        }
 
-.about {
-  background: #102139;
-  text-align: center;
-}
+        .primary:hover {
+            background: #edcc79;
+        }
 
-.about h2 {
-  font-size: 30px;
-  margin-bottom: 20px;
-}
+        .secondary {
+            border: 1px solid #d9b45b;
+            color: #d9b45b;
+        }
 
-.about p {
-  color: #b7c3d5;
-  line-height: 1.9;
-  max-width: 750px;
-  margin: 0 auto 15px;
-}
+        .secondary:hover {
+            background: #10243e;
+        }
 
-.notice {
-  max-width: 800px;
-  margin: 25px auto 0;
-  padding: 18px;
-  border: 1px solid #79683c;
-  color: #e4d8b4;
-  font-size: 13px;
-  line-height: 1.7;
-  text-align: left;
-}
+        .demo-notice {
+            background: #10243e;
+            border-top: 1px solid #c9a54c;
+            border-bottom: 1px solid #c9a54c;
+            padding: 20px 7%;
+            text-align: center;
+            color: #f0d58b;
+            font-size: 13px;
+        }
 
-.contact {
-  text-align: center;
-}
+        .section {
+            padding: 75px 7%;
+        }
 
-.contact p {
-  color: #b7c3d5;
-  margin: 15px 0 25px;
-}
+        .section-heading {
+            text-align: center;
+            max-width: 650px;
+            margin: 0 auto 45px;
+        }
 
-footer {
-  text-align: center;
-  padding: 25px;
-  border-top: 1px solid #26354a;
-  color: #9eacc0;
-  font-size: 12px;
-  line-height: 1.8;
-}
+        .section-heading .eyebrow {
+            margin-bottom: 12px;
+        }
 
-@media (max-width: 600px) {
-  header {
-    padding: 20px 5%;
-    flex-direction: column;
-    gap: 18px;
-  }
+        .section-heading h2 {
+            font-size: 34px;
+            margin-bottom: 15px;
+        }
 
-  nav a {
-    margin: 0 7px;
-  }
+        .section-heading p {
+            color: #aebaca;
+        }
 
-  .hero {
-    padding: 75px 6%;
-  }
+        .features {
+            display: grid;
+            grid-template-columns: repeat(
+                auto-fit,
+                minmax(220px, 1fr)
+            );
+            gap: 22px;
+            max-width: 1150px;
+            margin: auto;
+        }
 
-  section {
-    padding: 55px 6%;
-  }
-}
-</style>
+        .feature-card {
+            background: #10243e;
+            border: 1px solid #263c55;
+            border-radius: 12px;
+            padding: 28px;
+            transition: transform 0.2s;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-4px);
+            border-color: #c9a54c;
+        }
+
+        .feature-icon {
+            font-size: 30px;
+            margin-bottom: 15px;
+        }
+
+        .feature-card h3 {
+            color: #d9b45b;
+            margin-bottom: 12px;
+        }
+
+        .feature-card p {
+            color: #b9c4d3;
+            font-size: 14px;
+        }
+
+        .plans-section {
+            background: #0b1b30;
+        }
+
+        .plans {
+            display: grid;
+            grid-template-columns: repeat(
+                auto-fit,
+                minmax(220px, 1fr)
+            );
+            gap: 22px;
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        .plan-card {
+            text-align: center;
+            background: #10243e;
+            border: 1px solid #344963;
+            border-radius: 12px;
+            padding: 30px 22px;
+        }
+
+        .plan-card.featured {
+            border: 2px solid #d9b45b;
+        }
+
+        .plan-card h3 {
+            color: #d9b45b;
+            font-size: 22px;
+            margin-bottom: 15px;
+        }
+
+        .plan-price {
+            font-size: 34px;
+            font-weight: bold;
+            margin-bottom: 8px;
+        }
+
+        .plan-card p {
+            color: #aebaca;
+            font-size: 13px;
+            margin-bottom: 22px;
+        }
+
+        .plan-card a {
+            display: block;
+            padding: 12px;
+            background: #d9b45b;
+            color: #071426;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: bold;
+        }
+
+        .cta {
+            text-align: center;
+            padding: 75px 7%;
+            background:
+                radial-gradient(
+                    circle at center,
+                    rgba(201, 165, 76, 0.12),
+                    transparent 65%
+                );
+        }
+
+        .cta h2 {
+            font-size: 34px;
+            margin-bottom: 15px;
+        }
+
+        .cta p {
+            color: #b9c4d3;
+            margin-bottom: 28px;
+        }
+
+        footer {
+            background: #050e1b;
+            border-top: 1px solid #263c55;
+            padding: 35px 7%;
+            text-align: center;
+        }
+
+        footer .logo {
+            margin-bottom: 12px;
+        }
+
+        footer p {
+            color: #8291a5;
+            font-size: 12px;
+            margin-bottom: 10px;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 18px;
+            margin: 20px 0;
+        }
+
+        .footer-links a {
+            color: #d9b45b;
+            text-decoration: none;
+            font-size: 13px;
+        }
+
+        @media (max-width: 600px) {
+            header {
+                padding: 18px 5%;
+            }
+
+            nav {
+                gap: 13px;
+            }
+
+            .hero {
+                min-height: 500px;
+                padding: 70px 6%;
+            }
+
+            .hero p {
+                font-size: 15px;
+            }
+
+            .section {
+                padding: 55px 6%;
+            }
+
+            .section-heading h2,
+            .cta h2 {
+                font-size: 28px;
+            }
+
+            .demo-notice {
+                padding: 18px 6%;
+            }
+        }
+    </style>
 </head>
 
 <body>
 
 <header>
-  <div class="logo">AUREX CAPITAL</div>
-  <nav>
-    <a href="#home">Home</a>
-    <a href="#services">Resources</a>
-    <a href="#about">About</a>
-    <a href="#contact">Contact</a>
-  </nav>
+    <div class="logo">AUREX CAPITAL</div>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="#about">About</a>
+        <a href="investments.html">Plans</a>
+        <a href="login.html">Login</a>
+        <a href="register.html" class="nav-button">Create Account</a>
+    </nav>
 </header>
 
-<main>
+<section class="hero">
 
-<section class="hero" id="home">
-  <div class="label">FINANCIAL KNOWLEDGE & OPPORTUNITY</div>
+    <div class="hero-content">
 
-  <h1>
-    Build Your Future With
-    <span>Informed Decisions.</span>
-  </h1>
+        <div class="eyebrow">
+            A Modern Financial Platform
+        </div>
 
-  <p>
-    Discover financial education, explore investment concepts,
-    and learn about the opportunities and risks involved in
-    building long-term financial security.
-  </p>
+        <h1>
+            Your Financial Future,
+            <span>Reimagined.</span>
+        </h1>
 
-  <a href="#services" class="button">Explore Our Resources</a>
-</section>
+        <p>
+            Explore the Aurex Capital demonstration platform.
+            Discover its account dashboard, sample package information,
+            and financial interface in one place.
+        </p>
 
-<section id="services">
-  <div class="section-title">
-    <h2>Explore Investment Options</h2>
-    <p>Learn about investment approaches and their risks.</p>
-  </div>
+        <div class="buttons">
+            <a href="register.html" class="button primary">
+                Create an Account
+            </a>
 
-  <div class="cards">
+            <a href="investments.html" class="button secondary">
+                Explore Plans
+            </a>
+        </div>
 
-    <div class="card">
-      <div class="icon">🌱</div>
-      <h3>Beginner Investor</h3>
-      <p>Learn about budgeting, savings, diversification, and financial markets.</p>
-      <p><strong>Focus:</strong> Investment fundamentals</p>
-      <p><strong>Risk:</strong> Depends on the financial product.</p>
     </div>
 
-    <div class="card">
-      <div class="icon">📈</div>
-      <h3>Growth Investing</h3>
-      <p>Explore company performance, growth prospects, and long-term goals.</p>
-      <p><strong>Focus:</strong> Potential long-term growth</p>
-      <p><strong>Risk:</strong> Investments can lose value.</p>
+</section>
+
+<div class="demo-notice">
+    DEMONSTRATION WEBSITE — No real investments, deposits,
+    withdrawals, or financial services are currently available.
+</div>
+
+<section class="section" id="about">
+
+    <div class="section-heading">
+
+        <div class="eyebrow">Discover Aurex Capital</div>
+
+        <h2>A Clearer Financial Experience</h2>
+
+        <p>
+            Explore the features of our sample platform
+            through a clean and easy-to-navigate interface.
+        </p>
+
     </div>
 
-    <div class="card">
-      <div class="icon">🏛️</div>
-      <h3>Income Investing</h3>
-      <p>Learn about bonds, dividends, and other income-producing assets.</p>
-      <p><strong>Focus:</strong> Understanding investment income</p>
-      <p><strong>Risk:</strong> Income is not guaranteed.</p>
+    <div class="features">
+
+        <div class="feature-card">
+            <div class="feature-icon">📊</div>
+
+            <h3>Account Dashboard</h3>
+
+            <p>
+                Explore a sample dashboard displaying example balances,
+                account information, and transaction history.
+            </p>
+        </div>
+
+        <div class="feature-card">
+            <div class="feature-icon">💎</div>
+
+            <h3>Sample Packages</h3>
+
+            <p>
+                Browse demonstration packages and see how financial
+                product information could be presented.
+            </p>
+        </div>
+
+        <div class="feature-card">
+            <div class="feature-icon">💵</div>
+
+            <h3>USD Display</h3>
+
+            <p>
+                View sample package amounts and dashboard balances
+                in US dollars ($).
+            </p>
+        </div>
+
+        <div class="feature-card">
+            <div class="feature-icon">📱</div>
+
+            <h3>Simple Navigation</h3>
+
+            <p>
+                Explore a mobile-friendly layout with links to
+                the platform's demonstration pages.
+            </p>
+        </div>
+
     </div>
 
-  </div>
-</section>
-<section class="about" id="about">
-  <h2>About Aurex Capital</h2>
-
-  <p>
-    Aurex Capital is a financial information website concept
-    focused on investment education, financial awareness,
-    and informed decision-making.
-  </p>
-
-  <p>
-    Our aim is to make financial concepts easier to understand
-    and encourage responsible consideration of investment risks.
-  </p>
-
-  <div class="notice">
-    <strong>Important notice:</strong>
-    This website currently provides educational information only.
-    It does not accept deposits, operate investment accounts,
-    or promise financial returns. Investments can lose value.
-    Appropriate registration, regulatory permissions, secure
-    infrastructure, and payment arrangements must be established
-    before offering financial services or accepting customer funds.
-  </div>
 </section>
 
-<section class="contact" id="contact">
-  <h2>Contact Us</h2>
+<section class="section plans-section">
 
-  <p>
-    Official customer support information will be published here
-    once it is available.
-  </p>
+    <div class="section-heading">
 
-  <a href="#home" class="button">Back to Home</a>
+        <div class="eyebrow">Demonstration Packages</div>
+
+        <h2>Explore Our Sample Plans</h2>
+
+        <p>
+            These example amounts demonstrate the website layout.
+            They are not active investment offers.
+        </p>
+
+    </div>
+
+    <div class="plans">
+
+        <div class="plan-card">
+
+            <h3>Starter</h3>
+
+            <div class="plan-price">$100</div>
+
+            <p>Example package amount · USD</p>
+
+            <a href="investments.html">View Details</a>
+
+        </div>
+
+        <div class="plan-card featured">
+
+            <h3>Silver</h3>
+
+            <div class="plan-price">$500</div>
+
+            <p>Example package amount · USD</p>
+
+            <a href="investments.html">View Details</a>
+
+        </div>
+
+        <div class="plan-card">
+
+            <h3>Gold</h3>
+
+            <div class="plan-price">$1,000</div>
+
+            <p>Example package amount · USD</p>
+
+            <a href="investments.html">View Details</a>
+
+        </div>
+
+    </div>
+
 </section>
 
-</main>
+<section class="cta">
+
+    <h2>Explore Aurex Capital</h2>
+
+    <p>
+        Visit the demonstration dashboard and discover the
+        platform's sample features.
+    </p>
+
+    <div class="buttons" style="justify-content: center;">
+
+        <a href="dashboard.html" class="button primary">
+            Open Dashboard
+        </a>
+
+        <a href="login.html" class="button secondary">
+            Login Page
+        </a>
+
+    </div>
+
+</section>
 
 <footer>
-  <p>© <span id="year"></span> Aurex Capital. All rights reserved.</p>
-  <p>Educational information only. Not financial advice.</p>
-  <p>Investment involves risk.</p>
-</footer>
 
-<script>
-document.getElementById("year").textContent =
-  new Date().getFullYear();
-</script>
+    <div class="logo">AUREX CAPITAL</div>
+
+    <p>
+        A demonstration financial platform interface.
+    </p>
+
+    <div class="footer-links">
+        <a href="index.html">Home</a>
+        <a href="login.html">Login</a>
+        <a href="register.html">Register</a>
+        <a href="dashboard.html">Dashboard</a>
+        <a href="investments.html">Plans</a>
+        <a href="profile.html">My Profile</a>
+    </div>
+
+    <p>
+        &copy; 2026 Aurex Capital. All rights reserved.
+    </p>
+
+    <p>
+        No real financial services or transactions are provided.
+        Example amounts are for demonstration purposes only.
+    </p>
+
+</footer>
 
 </body>
   </html>
