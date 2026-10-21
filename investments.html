@@ -1,287 +1,344 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Investment Plans | Aurex Capital</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-    <title>Investment Plans | Aurex Capital</title>
+    body {
+      font-family: Arial, sans-serif;
+      background: #071426;
+      color: #ffffff;
+      line-height: 1.6;
+    }
 
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: Arial, sans-serif;
-        }
+    header {
+      background: #0c1e35;
+      padding: 22px 7%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 15px;
+      border-bottom: 1px solid #c9a84c;
+    }
 
-        body {
-            background: #071426;
-            color: #ffffff;
-        }
+    .logo {
+      color: #e4c66b;
+      font-size: 23px;
+      font-weight: bold;
+      letter-spacing: 1px;
+    }
 
-        header {
-            background: #10243e;
-            padding: 20px;
-            border-bottom: 1px solid #d9b45b;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 15px;
-        }
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 18px;
+    }
 
-        .logo {
-            color: #d9b45b;
-            font-size: 22px;
-            font-weight: bold;
-        }
+    nav a {
+      color: #ffffff;
+      text-decoration: none;
+      font-size: 14px;
+    }
 
-        nav a {
-            color: #d9b45b;
-            text-decoration: none;
-            margin-left: 15px;
-            font-size: 14px;
-        }
+    nav a:hover {
+      color: #e4c66b;
+    }
 
-        .hero {
-            text-align: center;
-            padding: 55px 20px 35px;
-        }
+    .hero {
+      text-align: center;
+      padding: 65px 20px 45px;
+      background: linear-gradient(135deg, #0c1e35, #102d4c);
+    }
 
-        .hero h1 {
-            color: #d9b45b;
-            font-size: 34px;
-            margin-bottom: 15px;
-        }
+    .tag {
+      color: #e4c66b;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      font-size: 12px;
+      margin-bottom: 12px;
+    }
 
-        .hero p {
-            color: #b9c4d3;
-            line-height: 1.7;
-        }
+    h1 {
+      font-size: clamp(30px, 5vw, 45px);
+      margin-bottom: 15px;
+    }
 
-        .notice {
-            max-width: 900px;
-            margin: 0 auto 30px;
-            padding: 15px;
-            border: 1px solid #d9b45b;
-            border-radius: 8px;
-            background: #10243e;
-            color: #f0d58b;
-            font-size: 13px;
-            line-height: 1.6;
-        }
+    .hero p {
+      max-width: 650px;
+      margin: auto;
+      color: #c5d0df;
+    }
 
-        .plans {
-            max-width: 1100px;
-            margin: 0 auto;
-            padding: 0 20px 45px;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-            gap: 22px;
-        }
+    .container {
+      width: 90%;
+      max-width: 1100px;
+      margin: 45px auto;
+    }
 
-        .plan {
-            background: #10243e;
-            border: 1px solid #344963;
-            border-radius: 13px;
-            padding: 30px 22px;
-            text-align: center;
-        }
+    .section-title {
+      text-align: center;
+      margin-bottom: 30px;
+    }
 
-        .plan.featured {
-            border: 2px solid #d9b45b;
-        }
+    .section-title h2 {
+      font-size: 28px;
+      margin-bottom: 8px;
+    }
 
-        .plan h2 {
-            color: #d9b45b;
-            font-size: 24px;
-            margin-bottom: 18px;
-        }
+    .section-title p {
+      color: #aebdd0;
+    }
 
-        .price {
-            font-size: 35px;
-            font-weight: bold;
-            margin-bottom: 8px;
-        }
+    .plans {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 22px;
+    }
 
-        .label {
-            color: #aebaca;
-            font-size: 13px;
-            margin-bottom: 25px;
-        }
+    .plan {
+      background: #10233c;
+      border: 1px solid #29415d;
+      border-radius: 14px;
+      padding: 28px 22px;
+      text-align: center;
+      transition: transform 0.2s, border-color 0.2s;
+    }
 
-        .plan ul {
-            list-style: none;
-            text-align: left;
-            margin-bottom: 25px;
-        }
+    .plan:hover {
+      transform: translateY(-5px);
+      border-color: #e4c66b;
+    }
 
-        .plan li {
-            padding: 12px 0;
-            border-bottom: 1px solid #263c55;
-            color: #dce3ed;
-            font-size: 14px;
-        }
+    .plan.featured {
+      border: 2px solid #c9a84c;
+    }
 
-        .plan button {
-            width: 100%;
-            padding: 13px;
-            border: none;
-            border-radius: 7px;
-            background: #d9b45b;
-            color: #071426;
-            font-size: 15px;
-            font-weight: bold;
-            cursor: pointer;
-        }
+    .badge {
+      display: inline-block;
+      background: #c9a84c;
+      color: #071426;
+      font-size: 11px;
+      font-weight: bold;
+      padding: 5px 12px;
+      border-radius: 20px;
+      margin-bottom: 15px;
+    }
 
-        .plan button:hover {
-            background: #edcc79;
-        }
+    .plan h3 {
+      font-size: 21px;
+      margin-bottom: 12px;
+    }
 
-        #message {
-            max-width: 700px;
-            margin: 0 auto 35px;
-            padding: 0 20px;
-            text-align: center;
-            color: #f0d58b;
-            line-height: 1.7;
-        }
+    .amount {
+      color: #e4c66b;
+      font-size: 30px;
+      font-weight: bold;
+      margin-bottom: 5px;
+    }
 
-        footer {
-            text-align: center;
-            padding: 25px 15px;
-            color: #8291a5;
-            font-size: 12px;
-            line-height: 1.8;
-            border-top: 1px solid #263c55;
-        }
+    .label {
+      color: #aebdd0;
+      font-size: 13px;
+      margin-bottom: 22px;
+    }
 
-        @media (max-width: 480px) {
-            header {
-                flex-direction: column;
-                align-items: flex-start;
-            }
+    .details {
+      list-style: none;
+      text-align: left;
+      margin-bottom: 25px;
+    }
 
-            nav a {
-                margin-left: 0;
-                margin-right: 12px;
-            }
+    .details li {
+      padding: 10px 0;
+      border-bottom: 1px solid #263b54;
+      color: #d5deea;
+      font-size: 14px;
+    }
 
-            .hero h1 {
-                font-size: 28px;
-            }
-        }
-    </style>
+    .details li::before {
+      content: "✓ ";
+      color: #e4c66b;
+      font-weight: bold;
+    }
+
+    .button {
+      display: block;
+      width: 100%;
+      padding: 13px;
+      border: none;
+      border-radius: 7px;
+      background: #c9a84c;
+      color: #071426;
+      font-weight: bold;
+      font-size: 15px;
+      text-decoration: none;
+      cursor: pointer;
+    }
+
+    .button:hover {
+      background: #e4c66b;
+    }
+
+    .notice {
+      margin-top: 35px;
+      padding: 22px;
+      background: #0c1e35;
+      border-left: 4px solid #c9a84c;
+      border-radius: 8px;
+      color: #c5d0df;
+      font-size: 14px;
+    }
+
+    .actions {
+      text-align: center;
+      margin-top: 35px;
+    }
+
+    .secondary-button {
+      display: inline-block;
+      margin: 8px;
+      padding: 12px 22px;
+      border: 1px solid #c9a84c;
+      border-radius: 7px;
+      color: #e4c66b;
+      text-decoration: none;
+    }
+
+    footer {
+      text-align: center;
+      padding: 25px 15px;
+      margin-top: 50px;
+      background: #0c1e35;
+      border-top: 1px solid #263b54;
+      color: #aebdd0;
+      font-size: 13px;
+    }
+
+    @media (max-width: 600px) {
+      header {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      nav {
+        justify-content: center;
+      }
+
+      .hero {
+        padding-top: 45px;
+      }
+    }
+  </style>
 </head>
 
 <body>
 
-<header>
+  <header>
     <div class="logo">AUREX CAPITAL</div>
-
     <nav>
-        <a href="index.html">Home</a>
-        <a href="dashboard.html">Dashboard</a>
-        <a href="login.html">Login</a>
+      <a href="index.html">Home</a>
+      <a href="dashboard.html">Dashboard</a>
+      <a href="investments.html">Investments</a>
+      <a href="profile.html">Profile</a>
+      <a href="login.html">Login</a>
     </nav>
-</header>
+  </header>
 
-<section class="hero">
-    <h1>Explore Our Plans</h1>
-
+  <section class="hero">
+    <div class="tag">Your Financial Future</div>
+    <h1>Explore Investment Plans</h1>
     <p>
-        Discover the demonstration packages available on
-        the Aurex Capital platform.
-        <br>
-        All amounts are displayed in US dollars (USD).
+      Discover the available plan structures and explore how different
+      investment amounts can fit into your financial goals.
     </p>
-</section>
+  </section>
 
-<div class="notice">
-    <strong>DEMONSTRATION ONLY:</strong>
-    These are sample packages for website design purposes.
-    They do not accept investments, promise returns, or represent
-    active financial products.
-</div>
+  <main class="container">
 
-<section class="plans">
-
-    <div class="plan">
-        <h2>Starter Plan</h2>
-
-        <div class="price">$100</div>
-
-        <div class="label">Example package amount (USD)</div>
-
-        <ul>
-            <li>✓ Sample package overview</li>
-            <li>✓ Example account dashboard</li>
-            <li>✓ Demonstration transaction history</li>
-            <li>✓ No real financial transactions</li>
-        </ul>
-
-        <button onclick="selectPlan('Starter Plan', 100)">
-            View Plan
-        </button>
+    <div class="section-title">
+      <h2>Our Plans</h2>
+      <p>All amounts are displayed in United States dollars (USD).</p>
     </div>
 
-    <div class="plan featured">
-        <h2>Silver Plan</h2>
+    <section class="plans">
 
-        <div class="price">$500</div>
+      <article class="plan">
+        <h3>Starter Plan</h3>
+        <div class="amount">$100</div>
+        <div class="label">Illustrative starting amount</div>
 
-        <div class="label">Example package amount (USD)</div>
-
-        <ul>
-            <li>✓ Sample package overview</li>
-            <li>✓ Example account dashboard</li>
-            <li>✓ Demonstration transaction history</li>
-            <li>✓ No real financial transactions</li>
+        <ul class="details">
+          <li>Entry-level plan concept</li>
+          <li>Investment information</li>
+          <li>Account overview access</li>
+          <li>Risk information required</li>
         </ul>
 
-        <button onclick="selectPlan('Silver Plan', 500)">
-            View Plan
-        </button>
-    </div>
+        <a class="button" href="register.html">Get Started</a>
+      </article>
 
-    <div class="plan">
-        <h2>Gold Plan</h2>
+      <article class="plan featured">
+        <span class="badge">POPULAR</span>
+        <h3>Growth Plan</h3>
+        <div class="amount">$500</div>
+        <div class="label">Illustrative starting amount</div>
 
-        <div class="price">$1,000</div>
-
-        <div class="label">Example package amount (USD)</div>
-
-        <ul>
-            <li>✓ Sample package overview</li>
-            <li>✓ Example account dashboard</li>
-            <li>✓ Demonstration transaction history</li>
-            <li>✓ No real financial transactions</li>
+        <ul class="details">
+          <li>Growth-focused plan concept</li>
+          <li>Investment information</li>
+          <li>Account overview access</li>
+          <li>Risk information required</li>
         </ul>
 
-        <button onclick="selectPlan('Gold Plan', 1000)">
-            View Plan
-        </button>
+        <a class="button" href="register.html">Get Started</a>
+      </article>
+
+      <article class="plan">
+        <h3>Premium Plan</h3>
+        <div class="amount">$1,000</div>
+        <div class="label">Illustrative starting amount</div>
+
+        <ul class="details">
+          <li>Premium plan concept</li>
+          <li>Investment information</li>
+          <li>Account overview access</li>
+          <li>Risk information required</li>
+        </ul>
+
+        <a class="button" href="register.html">Get Started</a>
+      </article>
+
+    </section>
+
+    <div class="notice">
+      <strong style="color:#e4c66b;">Important Information</strong>
+      <p>
+        The amounts above are illustrative plan examples, not active investment
+        offers. No deposits, investment transactions, or returns are processed
+        through this page. Investment services require appropriate legal
+        authorization, clear risk disclosures, and secure financial systems
+        before they can be offered.
+      </p>
     </div>
 
-</section>
+    <div class="actions">
+      <a class="secondary-button" href="dashboard.html">View Dashboard</a>
+      <a class="secondary-button" href="index.html">Back to Home</a>
+    </div>
 
-<div id="message" role="status"></div>
+  </main>
 
-<footer>
-    &copy; 2026 Aurex Capital. All rights reserved.
-    <br>
-    Demonstration website only. No financial services are provided.
-</footer>
-
-<script>
-    function selectPlan(name, amount) {
-        document.getElementById("message").textContent =
-            name + " selected — example amount: $" +
-            amount.toLocaleString("en-US") +
-            " USD. This is a demonstration; no investment has been made.";
-    }
-</script>
+  <footer>
+    <p>&copy; 2026 Aurex Capital. All rights reserved.</p>
+  </footer>
 
 </body>
-  </html>
+</html>
