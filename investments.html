@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Investment Plans | Aurex Capital</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background: #071426;
+            color: #ffffff;
+        }
+
+        header {
+            background: #10243e;
+            padding: 20px;
+            border-bottom: 1px solid #d9b45b;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .logo {
+            color: #d9b45b;
+            font-size: 22px;
+            font-weight: bold;
+        }
+
+        nav a {
+            color: #d9b45b;
+            text-decoration: none;
+            margin-left: 15px;
+            font-size: 14px;
+        }
+
+        .hero {
+            text-align: center;
+            padding: 55px 20px 35px;
+        }
+
+        .hero h1 {
+            color: #d9b45b;
+            font-size: 34px;
+            margin-bottom: 15px;
+        }
+
+        .hero p {
+            color: #b9c4d3;
+            line-height: 1.7;
+        }
+
+        .notice {
+            max-width: 900px;
+            margin: 0 auto 30px;
+            padding: 15px;
+            border: 1px solid #d9b45b;
+            border-radius: 8px;
+            background: #10243e;
+            color: #f0d58b;
+            font-size: 13px;
+            line-height: 1.6;
+        }
+
+        .plans {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 20px 45px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 22px;
+        }
+
+        .plan {
+            background: #10243e;
+            border: 1px solid #344963;
+            border-radius: 13px;
+            padding: 30px 22px;
+            text-align: center;
+        }
+
+        .plan.featured {
+            border: 2px solid #d9b45b;
+        }
+
+        .plan h2 {
+            color: #d9b45b;
+            font-size: 24px;
+            margin-bottom: 18px;
+        }
+
+        .price {
+            font-size: 35px;
+            font-weight: bold;
+            margin-bottom: 8px;
+        }
+
+        .label {
+            color: #aebaca;
+            font-size: 13px;
+            margin-bottom: 25px;
+        }
+
+        .plan ul {
+            list-style: none;
+            text-align: left;
+            margin-bottom: 25px;
+        }
+
+        .plan li {
+            padding: 12px 0;
+            border-bottom: 1px solid #263c55;
+            color: #dce3ed;
+            font-size: 14px;
+        }
+
+        .plan button {
+            width: 100%;
+            padding: 13px;
+            border: none;
+            border-radius: 7px;
+            background: #d9b45b;
+            color: #071426;
+            font-size: 15px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .plan button:hover {
+            background: #edcc79;
+        }
+
+        #message {
+            max-width: 700px;
+            margin: 0 auto 35px;
+            padding: 0 20px;
+            text-align: center;
+            color: #f0d58b;
+            line-height: 1.7;
+        }
+
+        footer {
+            text-align: center;
+            padding: 25px 15px;
+            color: #8291a5;
+            font-size: 12px;
+            line-height: 1.8;
+            border-top: 1px solid #263c55;
+        }
+
+        @media (max-width: 480px) {
+            header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            nav a {
+                margin-left: 0;
+                margin-right: 12px;
+            }
+
+            .hero h1 {
+                font-size: 28px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <div class="logo">AUREX CAPITAL</div>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="dashboard.html">Dashboard</a>
+        <a href="login.html">Login</a>
+    </nav>
+</header>
+
+<section class="hero">
+    <h1>Explore Our Plans</h1>
+
+    <p>
+        Discover the demonstration packages available on
+        the Aurex Capital platform.
+        <br>
+        All amounts are displayed in US dollars (USD).
+    </p>
+</section>
+
+<div class="notice">
+    <strong>DEMONSTRATION ONLY:</strong>
+    These are sample packages for website design purposes.
+    They do not accept investments, promise returns, or represent
+    active financial products.
+</div>
+
+<section class="plans">
+
+    <div class="plan">
+        <h2>Starter Plan</h2>
+
+        <div class="price">$100</div>
+
+        <div class="label">Example package amount (USD)</div>
+
+        <ul>
+            <li>✓ Sample package overview</li>
+            <li>✓ Example account dashboard</li>
+            <li>✓ Demonstration transaction history</li>
+            <li>✓ No real financial transactions</li>
+        </ul>
+
+        <button onclick="selectPlan('Starter Plan', 100)">
+            View Plan
+        </button>
+    </div>
+
+    <div class="plan featured">
+        <h2>Silver Plan</h2>
+
+        <div class="price">$500</div>
+
+        <div class="label">Example package amount (USD)</div>
+
+        <ul>
+            <li>✓ Sample package overview</li>
+            <li>✓ Example account dashboard</li>
+            <li>✓ Demonstration transaction history</li>
+            <li>✓ No real financial transactions</li>
+        </ul>
+
+        <button onclick="selectPlan('Silver Plan', 500)">
+            View Plan
+        </button>
+    </div>
+
+    <div class="plan">
+        <h2>Gold Plan</h2>
+
+        <div class="price">$1,000</div>
+
+        <div class="label">Example package amount (USD)</div>
+
+        <ul>
+            <li>✓ Sample package overview</li>
+            <li>✓ Example account dashboard</li>
+            <li>✓ Demonstration transaction history</li>
+            <li>✓ No real financial transactions</li>
+        </ul>
+
+        <button onclick="selectPlan('Gold Plan', 1000)">
+            View Plan
+        </button>
+    </div>
+
+</section>
+
+<div id="message" role="status"></div>
+
+<footer>
+    &copy; 2026 Aurex Capital. All rights reserved.
+    <br>
+    Demonstration website only. No financial services are provided.
+</footer>
+
+<script>
+    function selectPlan(name, amount) {
+        document.getElementById("message").textContent =
+            name + " selected — example amount: $" +
+            amount.toLocaleString("en-US") +
+            " USD. This is a demonstration; no investment has been made.";
+    }
+</script>
+
+</body>
+  </html>
