@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Account | Aurex Capital</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background: #071426;
+            color: #ffffff;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .register-box {
+            width: 100%;
+            max-width: 420px;
+            padding: 35px 28px;
+            background: #10243e;
+            border: 1px solid #c9a54c;
+            border-radius: 14px;
+            box-shadow: 0 10px 35px rgba(0, 0, 0, 0.35);
+        }
+
+        .logo {
+            text-align: center;
+            font-size: 28px;
+            font-weight: bold;
+            color: #d9b45b;
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            text-align: center;
+            color: #c4cbd5;
+            font-size: 14px;
+            margin-bottom: 28px;
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 24px;
+            font-size: 23px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-size: 14px;
+            color: #e1e6ee;
+        }
+
+        input {
+            width: 100%;
+            padding: 13px;
+            margin-bottom: 18px;
+            border: 1px solid #344963;
+            border-radius: 7px;
+            background: #09182b;
+            color: white;
+            outline: none;
+        }
+
+        input:focus {
+            border-color: #d9b45b;
+        }
+
+        button {
+            width: 100%;
+            padding: 14px;
+            border: none;
+            border-radius: 7px;
+            background: #d9b45b;
+            color: #071426;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            margin-top: 5px;
+        }
+
+        button:hover {
+            background: #edcc79;
+        }
+
+        .login-link {
+            text-align: center;
+            margin-top: 22px;
+            color: #c4cbd5;
+            font-size: 14px;
+        }
+
+        .login-link a {
+            color: #d9b45b;
+            text-decoration: none;
+        }
+
+        .notice {
+            margin-top: 18px;
+            font-size: 12px;
+            line-height: 1.5;
+            color: #aebaca;
+            text-align: center;
+        }
+
+        #message {
+            margin-top: 15px;
+            text-align: center;
+            font-size: 14px;
+            color: #f0d58b;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="register-box">
+
+        <div class="logo">AUREX CAPITAL</div>
+
+        <p class="subtitle">Your financial future starts here.</p>
+
+        <h2>Create Your Account</h2>
+
+        <form id="registerForm">
+
+            <label for="fullname">Full Name</label>
+            <input
+                type="text"
+                id="fullname"
+                placeholder="Enter your full name"
+                autocomplete="name"
+                required
+            >
+
+            <label for="email">Email Address</label>
+            <input
+                type="email"
+                id="email"
+                placeholder="Enter your email"
+                autocomplete="email"
+                required
+            >
+
+            <label for="username">Username</label>
+            <input
+                type="text"
+                id="username"
+                placeholder="Choose a username"
+                autocomplete="username"
+                required
+            >
+
+            <label for="password">Password</label>
+            <input
+                type="password"
+                id="password"
+                placeholder="Create a password"
+                autocomplete="new-password"
+                minlength="8"
+                required
+            >
+
+            <label for="confirmPassword">Confirm Password</label>
+            <input
+                type="password"
+                id="confirmPassword"
+                placeholder="Re-enter your password"
+                autocomplete="new-password"
+                minlength="8"
+                required
+            >
+
+            <button type="submit">Create Account</button>
+
+            <p id="message" role="status"></p>
+
+        </form>
+
+        <p class="login-link">
+            Already have an account?
+            <a href="login.html">Log In</a>
+        </p>
+
+        <p class="notice">
+            Demonstration page only. Registration is not active.
+            Do not enter real passwords or personal information.
+        </p>
+
+    </div>
+
+    <script>
+        document.getElementById("registerForm").addEventListener("submit", function(event) {
+            event.preventDefault();
+
+            const password = document.getElementById("password").value;
+            const confirmPassword = document.getElementById("confirmPassword").value;
+            const message = document.getElementById("message");
+
+            if (password !== confirmPassword) {
+                message.textContent = "Passwords do not match. Please try again.";
+                return;
+            }
+
+            message.textContent =
+                "This is a demonstration. Account registration is not active yet.";
+        });
+    </script>
+
+</body>
+  </html>
