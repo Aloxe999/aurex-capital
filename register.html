@@ -1,221 +1,266 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Create Account | Aurex Capital</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: Arial, sans-serif;
-        }
+  <title>Create Account | Aurex Capital</title>
 
-        body {
-            background: #071426;
-            color: #ffffff;
-            min-height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            padding: 20px;
-        }
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-        .register-box {
-            width: 100%;
-            max-width: 420px;
-            padding: 35px 28px;
-            background: #10243e;
-            border: 1px solid #c9a54c;
-            border-radius: 14px;
-            box-shadow: 0 10px 35px rgba(0, 0, 0, 0.35);
-        }
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: linear-gradient(135deg, #071426, #102441);
+      color: #ffffff;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 25px 15px;
+    }
 
-        .logo {
-            text-align: center;
-            font-size: 28px;
-            font-weight: bold;
-            color: #d9b45b;
-            margin-bottom: 10px;
-        }
+    .register-card {
+      width: 100%;
+      max-width: 460px;
+      padding: 35px 30px;
+      background: #102039;
+      border: 1px solid rgba(217,181,104,0.35);
+      border-radius: 16px;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+    }
 
-        .subtitle {
-            text-align: center;
-            color: #c4cbd5;
-            font-size: 14px;
-            margin-bottom: 28px;
-        }
+    .logo {
+      text-align: center;
+      color: #d9b568;
+      font-size: 24px;
+      font-weight: 800;
+      letter-spacing: 1px;
+      margin-bottom: 8px;
+    }
 
-        h2 {
-            text-align: center;
-            margin-bottom: 24px;
-            font-size: 23px;
-        }
+    .subtitle {
+      text-align: center;
+      color: #aebbd0;
+      font-size: 14px;
+      margin-bottom: 28px;
+    }
 
-        label {
-            display: block;
-            margin-bottom: 8px;
-            font-size: 14px;
-            color: #e1e6ee;
-        }
+    h1 {
+      text-align: center;
+      font-size: 27px;
+      margin-bottom: 8px;
+    }
 
-        input {
-            width: 100%;
-            padding: 13px;
-            margin-bottom: 18px;
-            border: 1px solid #344963;
-            border-radius: 7px;
-            background: #09182b;
-            color: white;
-            outline: none;
-        }
+    .intro {
+      text-align: center;
+      color: #aebbd0;
+      font-size: 14px;
+      margin-bottom: 24px;
+    }
 
-        input:focus {
-            border-color: #d9b45b;
-        }
+    label {
+      display: block;
+      margin: 15px 0 7px;
+      font-size: 14px;
+    }
 
-        button {
-            width: 100%;
-            padding: 14px;
-            border: none;
-            border-radius: 7px;
-            background: #d9b45b;
-            color: #071426;
-            font-size: 16px;
-            font-weight: bold;
-            cursor: pointer;
-            margin-top: 5px;
-        }
+    input {
+      width: 100%;
+      padding: 13px;
+      border: 1px solid #34445c;
+      border-radius: 7px;
+      background: #071426;
+      color: #ffffff;
+      font-size: 15px;
+      outline: none;
+    }
 
-        button:hover {
-            background: #edcc79;
-        }
+    input:focus {
+      border-color: #d9b568;
+    }
 
-        .login-link {
-            text-align: center;
-            margin-top: 22px;
-            color: #c4cbd5;
-            font-size: 14px;
-        }
+    .terms {
+      display: flex;
+      align-items: flex-start;
+      gap: 9px;
+      margin-top: 18px;
+      color: #aebbd0;
+      font-size: 12px;
+      line-height: 1.5;
+    }
 
-        .login-link a {
-            color: #d9b45b;
-            text-decoration: none;
-        }
+    .terms input {
+      width: auto;
+      margin-top: 3px;
+      accent-color: #d9b568;
+    }
 
-        .notice {
-            margin-top: 18px;
-            font-size: 12px;
-            line-height: 1.5;
-            color: #aebaca;
-            text-align: center;
-        }
+    button {
+      width: 100%;
+      margin-top: 23px;
+      padding: 14px;
+      background: #d9b568;
+      color: #071426;
+      border: none;
+      border-radius: 7px;
+      font-size: 16px;
+      font-weight: bold;
+      cursor: pointer;
+    }
 
-        #message {
-            margin-top: 15px;
-            text-align: center;
-            font-size: 14px;
-            color: #f0d58b;
-        }
-    </style>
+    button:hover {
+      background: #f0d28c;
+    }
+
+    .message {
+      display: none;
+      margin-top: 16px;
+      padding: 12px;
+      border-radius: 7px;
+      background: rgba(217,181,104,0.1);
+      border: 1px solid rgba(217,181,104,0.3);
+      color: #f0d28c;
+      font-size: 13px;
+      line-height: 1.5;
+    }
+
+    .bottom-links {
+      text-align: center;
+      margin-top: 22px;
+      font-size: 14px;
+      line-height: 2;
+    }
+
+    a {
+      color: #d9b568;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .home-link {
+      display: block;
+      text-align: center;
+      margin-top: 16px;
+      color: #aebbd0;
+      font-size: 13px;
+    }
+
+    @media (max-width: 480px) {
+      .register-card {
+        padding: 28px 20px;
+      }
+    }
+  </style>
 </head>
 
 <body>
 
-    <div class="register-box">
+  <main class="register-card">
 
-        <div class="logo">AUREX CAPITAL</div>
+    <div class="logo">AUREX CAPITAL</div>
+    <p class="subtitle">Your financial future starts with a plan</p>
 
-        <p class="subtitle">Your financial future starts here.</p>
+    <h1>Create Your Account</h1>
+    <p class="intro">Enter your details to get started.</p>
 
-        <h2>Create Your Account</h2>
+    <form id="registerForm">
 
-        <form id="registerForm">
+      <label for="fullname">Full Name</label>
+      <input
+        type="text"
+        id="fullname"
+        name="fullname"
+        placeholder="Enter your full name"
+        autocomplete="name"
+        required
+      >
 
-            <label for="fullname">Full Name</label>
-            <input
-                type="text"
-                id="fullname"
-                placeholder="Enter your full name"
-                autocomplete="name"
-                required
-            >
+      <label for="email">Email Address</label>
+      <input
+        type="email"
+        id="email"
+        name="email"
+        placeholder="Enter your email address"
+        autocomplete="email"
+        required
+      >
 
-            <label for="email">Email Address</label>
-            <input
-                type="email"
-                id="email"
-                placeholder="Enter your email"
-                autocomplete="email"
-                required
-            >
+      <label for="password">Create Password</label>
+      <input
+        type="password"
+        id="password"
+        name="password"
+        placeholder="Create a password"
+        autocomplete="new-password"
+        minlength="8"
+        required
+      >
 
-            <label for="username">Username</label>
-            <input
-                type="text"
-                id="username"
-                placeholder="Choose a username"
-                autocomplete="username"
-                required
-            >
+      <label for="confirmPassword">Confirm Password</label>
+      <input
+        type="password"
+        id="confirmPassword"
+        name="confirmPassword"
+        placeholder="Re-enter your password"
+        autocomplete="new-password"
+        minlength="8"
+        required
+      >
 
-            <label for="password">Password</label>
-            <input
-                type="password"
-                id="password"
-                placeholder="Create a password"
-                autocomplete="new-password"
-                minlength="8"
-                required
-            >
+      <label class="terms">
+        <input type="checkbox" id="terms" required>
+        <span>
+          I have read and agree to the applicable terms and privacy policy.
+        </span>
+      </label>
 
-            <label for="confirmPassword">Confirm Password</label>
-            <input
-                type="password"
-                id="confirmPassword"
-                placeholder="Re-enter your password"
-                autocomplete="new-password"
-                minlength="8"
-                required
-            >
+      <button type="submit">Create Account</button>
 
-            <button type="submit">Create Account</button>
+      <div class="message" id="message" role="status"></div>
 
-            <p id="message" role="status"></p>
+    </form>
 
-        </form>
-
-        <p class="login-link">
-            Already have an account?
-            <a href="login.html">Log In</a>
-        </p>
-
-        <p class="notice">
-            Demonstration page only. Registration is not active.
-            Do not enter real passwords or personal information.
-        </p>
-
+    <div class="bottom-links">
+      Already have an account?
+      <a href="login.html">Sign In</a>
     </div>
 
-    <script>
-        document.getElementById("registerForm").addEventListener("submit", function(event) {
-            event.preventDefault();
+    <a href="index.html" class="home-link">
+      ← Back to Homepage
+    </a>
 
-            const password = document.getElementById("password").value;
-            const confirmPassword = document.getElementById("confirmPassword").value;
-            const message = document.getElementById("message");
+  </main>
 
-            if (password !== confirmPassword) {
-                message.textContent = "Passwords do not match. Please try again.";
-                return;
-            }
+  <script>
+    const form = document.getElementById("registerForm");
+    const message = document.getElementById("message");
 
-            message.textContent =
-                "This is a demonstration. Account registration is not active yet.";
-        });
-    </script>
+    form.addEventListener("submit", function(event) {
+      event.preventDefault();
+
+      const password = document.getElementById("password").value;
+      const confirmPassword =
+        document.getElementById("confirmPassword").value;
+
+      if (password !== confirmPassword) {
+        message.textContent = "Your passwords do not match. Please try again.";
+        message.style.display = "block";
+        return;
+      }
+
+      message.textContent =
+        "The registration interface is ready. Account creation will be available after secure account services are connected.";
+      message.style.display = "block";
+    });
+  </script>
 
 </body>
-  </html>
+</html>
