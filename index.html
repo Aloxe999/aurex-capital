@@ -1,451 +1,488 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <meta name="description" content="Discover Aurex Capital, a financial platform demonstration featuring account dashboards and investment information.">
+  <title>Aurex Capital | Your Financial Future</title>
 
-    <title>Aurex Capital | Welcome</title>
+  <meta name="description"
+        content="Explore the Aurex Capital financial platform demonstration.">
 
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: Arial, sans-serif;
-        }
+  <style>
+    :root {
+      --navy: #071426;
+      --navy-light: #102441;
+      --gold: #d9b568;
+      --white: #ffffff;
+      --muted: #aebbd0;
+      --card: #102039;
+      --border: rgba(217,181,104,0.22);
+    }
 
-        html {
-            scroll-behavior: smooth;
-        }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-        body {
-            background: #071426;
-            color: #ffffff;
-            line-height: 1.6;
-        }
+    html {
+      scroll-behavior: smooth;
+    }
 
-        header {
-            background: #0b1b30;
-            border-bottom: 1px solid #c9a54c;
-            padding: 20px 7%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 15px;
-        }
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: var(--navy);
+      color: var(--white);
+      line-height: 1.6;
+    }
 
-        .logo {
-            color: #d9b45b;
-            font-size: 23px;
-            font-weight: bold;
-            letter-spacing: 1px;
-        }
+    a {
+      text-decoration: none;
+    }
 
-        nav {
-            display: flex;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 18px;
-        }
+    .container {
+      width: min(1120px, 90%);
+      margin: auto;
+    }
 
-        nav a {
-            color: #e1e6ee;
-            text-decoration: none;
-            font-size: 14px;
-        }
+    header {
+      background: rgba(7,20,38,0.97);
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
 
-        nav a:hover {
-            color: #d9b45b;
-        }
+    nav {
+      min-height: 76px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+    }
 
-        .nav-button {
-            padding: 10px 16px;
-            border-radius: 6px;
-            background: #d9b45b;
-            color: #071426;
-            font-weight: bold;
-        }
+    .logo {
+      color: var(--gold);
+      font-size: 23px;
+      font-weight: 800;
+      letter-spacing: 1px;
+    }
 
-        .hero {
-            min-height: 570px;
-            padding: 90px 7%;
-            display: flex;
-            align-items: center;
-            background:
-                radial-gradient(
-                    circle at 80% 30%,
-                    rgba(201, 165, 76, 0.13),
-                    transparent 35%
-                ),
-                linear-gradient(135deg, #071426, #10243e);
-        }
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 23px;
+    }
 
-        .hero-content {
-            max-width: 720px;
-        }
+    .nav-links a {
+      color: var(--white);
+      font-size: 14px;
+    }
 
-        .eyebrow {
-            color: #d9b45b;
-            text-transform: uppercase;
-            letter-spacing: 3px;
-            font-size: 12px;
-            font-weight: bold;
-            margin-bottom: 20px;
-        }
+    .nav-links a:hover {
+      color: var(--gold);
+    }
 
-        .hero h1 {
-            font-size: clamp(38px, 6vw, 66px);
-            line-height: 1.12;
-            margin-bottom: 25px;
-        }
+    .btn {
+      display: inline-block;
+      padding: 12px 22px;
+      border-radius: 7px;
+      font-weight: bold;
+      font-size: 14px;
+      transition: 0.25s;
+      text-align: center;
+    }
 
-        .hero h1 span {
-            color: #d9b45b;
-        }
+    .btn-gold {
+      background: var(--gold);
+      color: var(--navy);
+    }
 
-        .hero p {
-            color: #b9c4d3;
-            max-width: 600px;
-            font-size: 17px;
-            margin-bottom: 32px;
-        }
+    .btn-gold:hover {
+      background: #f0d28c;
+      transform: translateY(-2px);
+    }
 
-        .buttons {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 14px;
-        }
+    .btn-outline {
+      border: 1px solid var(--gold);
+      color: var(--gold);
+    }
 
-        .button {
-            display: inline-block;
-            padding: 14px 23px;
-            border-radius: 7px;
-            text-decoration: none;
-            font-weight: bold;
-            text-align: center;
-        }
+    .hero {
+      padding: 100px 0 85px;
+      background:
+        radial-gradient(ellipse at 80% 30%,
+        rgba(217,181,104,0.13), transparent 42%),
+        linear-gradient(135deg, #071426, #102441);
+    }
 
-        .primary {
-            background: #d9b45b;
-            color: #071426;
-        }
+    .hero-content {
+      max-width: 760px;
+    }
 
-        .primary:hover {
-            background: #edcc79;
-        }
+    .eyebrow {
+      display: inline-block;
+      color: var(--gold);
+      border: 1px solid var(--border);
+      border-radius: 30px;
+      padding: 7px 14px;
+      font-size: 12px;
+      letter-spacing: 1.5px;
+      margin-bottom: 24px;
+    }
 
-        .secondary {
-            border: 1px solid #d9b45b;
-            color: #d9b45b;
-        }
+    h1 {
+      font-size: clamp(38px, 6vw, 66px);
+      line-height: 1.12;
+      margin-bottom: 23px;
+    }
 
-        .secondary:hover {
-            background: #10243e;
-        }
+    h1 span {
+      color: var(--gold);
+    }
 
-        .demo-notice {
-            background: #10243e;
-            border-top: 1px solid #c9a54c;
-            border-bottom: 1px solid #c9a54c;
-            padding: 20px 7%;
-            text-align: center;
-            color: #f0d58b;
-            font-size: 13px;
-        }
+    .hero p {
+      color: var(--muted);
+      max-width: 610px;
+      font-size: 17px;
+      margin-bottom: 30px;
+    }
 
-        .section {
-            padding: 75px 7%;
-        }
+    .hero-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+    }
 
-        .section-heading {
-            text-align: center;
-            max-width: 650px;
-            margin: 0 auto 45px;
-        }
+    .section {
+      padding: 75px 0;
+    }
 
-        .section-heading .eyebrow {
-            margin-bottom: 12px;
-        }
+    .section-heading {
+      text-align: center;
+      margin-bottom: 42px;
+    }
 
-        .section-heading h2 {
-            font-size: 34px;
-            margin-bottom: 15px;
-        }
+    .section-heading h2 {
+      font-size: clamp(27px, 4vw, 38px);
+      margin-bottom: 12px;
+    }
 
-        .section-heading p {
-            color: #aebaca;
-        }
+    .section-heading p {
+      color: var(--muted);
+      max-width: 600px;
+      margin: auto;
+    }
 
-        .features {
-            display: grid;
-            grid-template-columns: repeat(
-                auto-fit,
-                minmax(220px, 1fr)
-            );
-            gap: 22px;
-            max-width: 1150px;
-            margin: auto;
-        }
+    .features,
+    .plans {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
 
-        .feature-card {
-            background: #10243e;
-            border: 1px solid #263c55;
-            border-radius: 12px;
-            padding: 28px;
-            transition: transform 0.2s;
-        }
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 28px;
+      transition: 0.25s;
+    }
 
-        .feature-card:hover {
-            transform: translateY(-4px);
-            border-color: #c9a54c;
-        }
+    .card:hover {
+      transform: translateY(-5px);
+      border-color: var(--gold);
+    }
 
-        .feature-icon {
-            font-size: 30px;
-            margin-bottom: 15px;
-        }
+    .icon {
+      font-size: 30px;
+      margin-bottom: 16px;
+    }
 
-        .feature-card h3 {
-            color: #d9b45b;
-            margin-bottom: 12px;
-        }
+    .card h3 {
+      font-size: 20px;
+      margin-bottom: 12px;
+    }
 
-        .feature-card p {
-            color: #b9c4d3;
-            font-size: 14px;
-        }
+    .card p {
+      color: var(--muted);
+      font-size: 14px;
+    }
 
-        .plans-section {
-            background: #0b1b30;
-        }
+    .plan-price {
+      font-size: 32px;
+      color: var(--gold);
+      font-weight: 800;
+      margin: 18px 0;
+    }
 
-        .plans {
-            display: grid;
-            grid-template-columns: repeat(
-                auto-fit,
-                minmax(220px, 1fr)
-            );
-            gap: 22px;
-            max-width: 1000px;
-            margin: auto;
-        }
+    .plan-label {
+      color: var(--muted);
+      font-size: 12px;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+    }
 
-        .plan-card {
-            text-align: center;
-            background: #10243e;
-            border: 1px solid #344963;
-            border-radius: 12px;
-            padding: 30px 22px;
-        }
+    .plan-button {
+      display: block;
+      margin-top: 24px;
+    }
 
-        .plan-card.featured {
-            border: 2px solid #d9b45b;
-        }
+    .cta {
+      background: var(--navy-light);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 48px 25px;
+      text-align: center;
+    }
 
-        .plan-card h3 {
-            color: #d9b45b;
-            font-size: 22px;
-            margin-bottom: 15px;
-        }
+    .cta h2 {
+      font-size: clamp(27px, 4vw, 38px);
+      margin-bottom: 14px;
+    }
 
-        .plan-price {
-            font-size: 34px;
-            font-weight: bold;
-            margin-bottom: 8px;
-        }
+    .cta p {
+      color: var(--muted);
+      margin-bottom: 25px;
+    }
 
-        .plan-card p {
-            color: #aebaca;
-            font-size: 13px;
-            margin-bottom: 22px;
-        }
+    footer {
+      padding: 30px 0;
+      border-top: 1px solid var(--border);
+      text-align: center;
+      color: var(--muted);
+      font-size: 13px;
+    }
 
-        .plan-card a {
-            display: block;
-            padding: 12px;
-            background: #d9b45b;
-            color: #071426;
-            text-decoration: none;
-            border-radius: 6px;
-            font-weight: bold;
-        }
+    footer p {
+      margin: 7px 0;
+    }
 
-        .cta {
-            text-align: center;
-            padding: 75px 7%;
-            background:
-                radial-gradient(
-                    circle at center,
-                    rgba(201, 165, 76, 0.12),
-                    transparent 65%
-                );
-        }
+    .demo-notice {
+      color: var(--gold);
+      font-size: 12px;
+    }
 
-        .cta h2 {
-            font-size: 34px;
-            margin-bottom: 15px;
-        }
+    @media (max-width: 760px) {
+      nav {
+        padding: 16px 0;
+        align-items: flex-start;
+        flex-direction: column;
+      }
 
-        .cta p {
-            color: #b9c4d3;
-            margin-bottom: 28px;
-        }
+      .nav-links {
+        width: 100%;
+        gap: 15px;
+        flex-wrap: wrap;
+      }
 
-        footer {
-            background: #050e1b;
-            border-top: 1px solid #263c55;
-            padding: 35px 7%;
-            text-align: center;
-        }
+      .nav-links a {
+        font-size: 13px;
+      }
 
-        footer .logo {
-            margin-bottom: 12px;
-        }
+      .features,
+      .plans {
+        grid-template-columns: 1fr;
+      }
 
-        footer p {
-            color: #8291a5;
-            font-size: 12px;
-            margin-bottom: 10px;
-        }
+      .hero {
+        padding: 70px 0;
+      }
 
-        .footer-links {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 18px;
-            margin: 20px 0;
-        }
+      .section {
+        padding: 55px 0;
+      }
 
-        .footer-links a {
-            color: #d9b45b;
-            text-decoration: none;
-            font-size: 13px;
-        }
-
-        @media (max-width: 600px) {
-            header {
-                padding: 18px 5%;
-            }
-
-            nav {
-                gap: 13px;
-            }
-
-            .hero {
-                min-height: 500px;
-                padding: 70px 6%;
-            }
-
-            .hero p {
-                font-size: 15px;
-            }
-
-            .section {
-                padding: 55px 6%;
-            }
-
-            .section-heading h2,
-            .cta h2 {
-                font-size: 28px;
-            }
-
-            .demo-notice {
-                padding: 18px 6%;
-            }
-        }
-    </style>
+      .card {
+        padding: 24px;
+      }
+    }
+  </style>
 </head>
 
 <body>
 
 <header>
-    <div class="logo">AUREX CAPITAL</div>
-
+  <div class="container">
     <nav>
-        <a href="index.html">Home</a>
-        <a href="#about">About</a>
-        <a href="investments.html">Plans</a>
+      <a href="index.html" class="logo">AUREX CAPITAL</a>
+
+      <div class="nav-links">
+        <a href="#home">Home</a>
+        <a href="#features">Features</a>
+        <a href="#plans">Plans</a>
         <a href="login.html">Login</a>
-        <a href="register.html" class="nav-button">Create Account</a>
+        <a href="register.html" class="btn btn-gold">
+          Get Started
+        </a>
+      </div>
     </nav>
+  </div>
 </header>
 
-<section class="hero">
+<main>
 
-    <div class="hero-content">
+  <section class="hero" id="home">
+    <div class="container">
+      <div class="hero-content">
 
-        <div class="eyebrow">
-            A Modern Financial Platform
-        </div>
+        <span class="eyebrow">AUREX CAPITAL · DEMO PLATFORM</span>
 
         <h1>
-            Your Financial Future,
-            <span>Reimagined.</span>
+          Build Your Future.<br>
+          <span>Think Beyond Today.</span>
         </h1>
 
         <p>
-            Explore the Aurex Capital demonstration platform.
-            Discover its account dashboard, sample package information,
-            and financial interface in one place.
+          Explore a modern financial platform demonstration
+          designed around clarity, organization, and a premium
+          digital experience.
         </p>
 
-        <div class="buttons">
-            <a href="register.html" class="button primary">
-                Create an Account
-            </a>
+        <div class="hero-buttons">
+          <a href="register.html" class="btn btn-gold">
+            Explore the Platform →
+          </a>
 
-            <a href="investments.html" class="button secondary">
-                Explore Plans
-            </a>
+          <a href="login.html" class="btn btn-outline">
+            Member Login
+          </a>
         </div>
 
+      </div>
     </div>
+  </section>
 
-</section>
+  <section class="section" id="features">
+    <div class="container">
 
-<div class="demo-notice">
-    DEMONSTRATION WEBSITE — No real investments, deposits,
-    withdrawals, or financial services are currently available.
-</div>
+      <div class="section-heading">
+        <h2>A Better Digital Experience</h2>
+        <p>
+          Explore the example features available in the
+          Aurex Capital demonstration.
+        </p>
+      </div>
 
-<section class="section" id="about">
+      <div class="features">
 
-    <div class="section-heading">
+        <div class="card">
+          <div class="icon">📊</div>
+          <h3>Account Dashboard</h3>
+          <p>
+            Explore a sample dashboard showing account
+            summaries and example financial activity.
+          </p>
+        </div>
 
-        <div class="eyebrow">Discover Aurex Capital</div>
+        <div class="card">
+          <div class="icon">💼</div>
+          <h3>Plan Overview</h3>
+          <p>
+            Browse illustrative plan categories and compare
+            their example starting amounts in US dollars.
+          </p>
+        </div>
 
-        <h2>A Clearer Financial Experience</h2>
+        <div class="card">
+          <div class="icon">🔐</div>
+          <h3>Simple Navigation</h3>
+          <p>
+            Explore the platform's pages through a clean,
+            organized interface designed for mobile and desktop.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="plans">
+    <div class="container">
+
+      <div class="section-heading">
+        <h2>Explore Example Plans</h2>
+        <p>
+          These sample amounts are for demonstration purposes
+          only. They are not investment offers or guarantees.
+        </p>
+      </div>
+
+      <div class="plans">
+
+        <div class="card">
+          <div class="plan-label">Example Plan 01</div>
+          <h3>Starter</h3>
+          <div class="plan-price">$100</div>
+          <p>Illustrative starting amount for the demo interface.</p>
+          <a href="investments.html"
+             class="btn btn-outline plan-button">
+            View Plans
+          </a>
+        </div>
+
+        <div class="card">
+          <div class="plan-label">Example Plan 02</div>
+          <h3>Silver</h3>
+          <div class="plan-price">$500</div>
+          <p>Illustrative amount for exploring the sample plan layout.</p>
+          <a href="investments.html"
+             class="btn btn-gold plan-button">
+            View Plans
+          </a>
+        </div>
+
+        <div class="card">
+          <div class="plan-label">Example Plan 03</div>
+          <h3>Gold</h3>
+          <div class="plan-price">$1,000</div>
+          <p>Illustrative amount for the demonstration only.</p>
+          <a href="investments.html"
+             class="btn btn-outline plan-button">
+            View Plans
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="cta">
+
+        <h2>Explore Aurex Capital</h2>
 
         <p>
-            Explore the features of our sample platform
-            through a clean and easy-to-navigate interface.
+          Visit the demo pages and discover the platform's layout.
+          No real accounts or financial transactions are available.
         </p>
 
+        <a href="dashboard.html" class="btn btn-gold">
+          Open Demo Dashboard →
+        </a>
+
+      </div>
     </div>
+  </section>
 
-    <div class="features">
+</main>
 
-        <div class="feature-card">
-            <div class="feature-icon">📊</div>
+<footer>
+  <div class="container">
+    <p><strong>AUREX CAPITAL</strong></p>
+    <p>Designed for a modern digital experience.</p>
+    <p class="demo-notice">
+      DEMONSTRATION ONLY · No real investments, deposits,
+      withdrawals, or account creation are processed.
+    </p>
+    <p>© 2026 Aurex Capital. All rights reserved.</p>
+  </div>
+</footer>
 
-            <h3>Account Dashboard</h3>
-
-            <p>
-                Explore a sample dashboard displaying example balances,
-                account information, and transaction history.
-            </p>
-        </div>
-
-        <div class="feature-card">
-            <div class="feature-icon">💎</div>
-
-            <h3>Sample Packages</h3>
-
-            <p>
-                Browse demonstration packages and see how financial
+</body>
+</html>l
                 product information could be presented.
             </p>
         </div>
