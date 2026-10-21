@@ -1,282 +1,380 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Profile | Aurex Capital</title>
 
-    <title>My Profile | Aurex Capital</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: Arial, sans-serif;
-        }
+    body {
+      font-family: Arial, sans-serif;
+      background: #071426;
+      color: #ffffff;
+      line-height: 1.6;
+    }
 
-        body {
-            background: #071426;
-            color: #ffffff;
-            min-height: 100vh;
-        }
+    header {
+      background: #0c1e35;
+      padding: 22px 7%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 15px;
+      border-bottom: 1px solid #c9a84c;
+    }
 
-        header {
-            background: #10243e;
-            padding: 20px;
-            border-bottom: 1px solid #d9b45b;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 15px;
-        }
+    .logo {
+      color: #e4c66b;
+      font-size: 23px;
+      font-weight: bold;
+      letter-spacing: 1px;
+    }
 
-        .logo {
-            color: #d9b45b;
-            font-size: 22px;
-            font-weight: bold;
-        }
+    nav {
+      display: flex;
+      gap: 18px;
+      flex-wrap: wrap;
+    }
 
-        nav a {
-            color: #d9b45b;
-            text-decoration: none;
-            margin-left: 15px;
-            font-size: 14px;
-        }
+    nav a {
+      color: #ffffff;
+      text-decoration: none;
+      font-size: 14px;
+    }
 
-        .container {
-            max-width: 750px;
-            width: 90%;
-            margin: 40px auto;
-        }
+    nav a:hover {
+      color: #e4c66b;
+    }
 
-        .heading {
-            text-align: center;
-            margin-bottom: 25px;
-        }
+    .container {
+      width: 90%;
+      max-width: 850px;
+      margin: 45px auto;
+    }
 
-        .heading h1 {
-            color: #d9b45b;
-            margin-bottom: 10px;
-        }
+    .heading {
+      margin-bottom: 25px;
+    }
 
-        .heading p {
-            color: #aebaca;
-            font-size: 14px;
-        }
+    .tag {
+      color: #e4c66b;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      font-size: 12px;
+    }
 
-        .notice {
-            background: #192b40;
-            border: 1px solid #c9a54c;
-            border-radius: 8px;
-            padding: 14px;
-            color: #f0d58b;
-            font-size: 13px;
-            line-height: 1.6;
-            margin-bottom: 25px;
-        }
+    h1 {
+      font-size: 32px;
+      margin: 8px 0;
+    }
 
-        .profile-card {
-            background: #10243e;
-            border: 1px solid #c9a54c;
-            border-radius: 14px;
-            padding: 30px;
-            margin-bottom: 25px;
-        }
+    .subtitle {
+      color: #aebdd0;
+    }
 
-        .avatar {
-            width: 85px;
-            height: 85px;
-            margin: 0 auto 15px;
-            border-radius: 50%;
-            background: #d9b45b;
-            color: #071426;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 35px;
-            font-weight: bold;
-        }
+    .card {
+      background: #10233c;
+      border: 1px solid #29415d;
+      border-radius: 14px;
+      padding: 28px;
+      margin-bottom: 24px;
+    }
 
-        .username {
-            text-align: center;
-            color: #d9b45b;
-            font-size: 22px;
-            margin-bottom: 8px;
-        }
+    .card h2 {
+      color: #e4c66b;
+      font-size: 20px;
+      margin-bottom: 20px;
+    }
 
-        .status {
-            text-align: center;
-            color: #aebaca;
-            font-size: 13px;
-            margin-bottom: 25px;
-        }
+    .profile-header {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      padding-bottom: 22px;
+      border-bottom: 1px solid #29415d;
+      margin-bottom: 20px;
+    }
 
-        .row {
-            display: flex;
-            justify-content: space-between;
-            gap: 15px;
-            padding: 17px 0;
-            border-bottom: 1px solid #263c55;
-            font-size: 14px;
-        }
+    .avatar {
+      width: 70px;
+      height: 70px;
+      border-radius: 50%;
+      background: #c9a84c;
+      color: #071426;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 28px;
+      font-weight: bold;
+    }
 
-        .row:last-child {
-            border-bottom: none;
-        }
+    .profile-header p {
+      color: #aebdd0;
+      font-size: 14px;
+    }
 
-        .row span:first-child {
-            color: #aebaca;
-        }
+    .status {
+      display: inline-block;
+      margin-top: 7px;
+      padding: 4px 10px;
+      border-radius: 20px;
+      background: #20334a;
+      color: #e4c66b;
+      font-size: 12px;
+    }
 
-        .row span:last-child {
-            text-align: right;
-            overflow-wrap: anywhere;
-        }
+    .info-row {
+      display: flex;
+      justify-content: space-between;
+      gap: 15px;
+      padding: 13px 0;
+      border-bottom: 1px solid #263b54;
+    }
 
-        .section-title {
-            color: #d9b45b;
-            font-size: 19px;
-            margin-bottom: 20px;
-        }
+    .info-row:last-child {
+      border-bottom: none;
+    }
 
-        .actions {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-            gap: 12px;
-        }
+    .info-label {
+      color: #aebdd0;
+    }
 
-        .actions a {
-            display: block;
-            text-align: center;
-            padding: 13px;
-            background: #d9b45b;
-            color: #071426;
-            border-radius: 7px;
-            font-weight: bold;
-            font-size: 14px;
-            text-decoration: none;
-        }
+    .info-value {
+      text-align: right;
+      overflow-wrap: anywhere;
+    }
 
-        .actions a:hover {
-            background: #edcc79;
-        }
+    label {
+      display: block;
+      margin: 16px 0 7px;
+      font-size: 14px;
+      font-weight: bold;
+    }
 
-        footer {
-            text-align: center;
-            color: #8291a5;
-            padding: 25px 15px;
-            font-size: 12px;
-            line-height: 1.7;
-        }
+    input {
+      width: 100%;
+      padding: 13px;
+      border: 1px solid #354d69;
+      border-radius: 8px;
+      background: #071426;
+      color: white;
+      font-size: 15px;
+    }
 
-        @media (max-width: 480px) {
-            header {
-                flex-direction: column;
-                align-items: flex-start;
-            }
+    input:focus {
+      outline: none;
+      border-color: #e4c66b;
+    }
 
-            nav a {
-                margin-left: 0;
-                margin-right: 12px;
-            }
+    .button {
+      display: inline-block;
+      padding: 12px 20px;
+      margin-top: 20px;
+      border: none;
+      border-radius: 7px;
+      background: #c9a84c;
+      color: #071426;
+      font-weight: bold;
+      text-decoration: none;
+      cursor: pointer;
+    }
 
-            .profile-card {
-                padding: 22px 17px;
-            }
+    .button:hover {
+      background: #e4c66b;
+    }
 
-            .row {
-                font-size: 13px;
-            }
-        }
-    </style>
+    .secondary {
+      display: inline-block;
+      padding: 11px 18px;
+      margin: 6px 6px 0 0;
+      border: 1px solid #c9a84c;
+      border-radius: 7px;
+      color: #e4c66b;
+      text-decoration: none;
+    }
+
+    .notice {
+      color: #c5d0df;
+      background: #0c1e35;
+      border-left: 4px solid #c9a84c;
+      padding: 15px;
+      border-radius: 7px;
+      font-size: 13px;
+      margin-top: 18px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 25px 15px;
+      background: #0c1e35;
+      border-top: 1px solid #263b54;
+      color: #aebdd0;
+      font-size: 13px;
+      margin-top: 50px;
+    }
+
+    @media (max-width: 600px) {
+      header {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      nav {
+        justify-content: center;
+      }
+
+      .card {
+        padding: 20px;
+      }
+
+      .info-row {
+        flex-direction: column;
+        gap: 3px;
+      }
+
+      .info-value {
+        text-align: left;
+      }
+    }
+  </style>
 </head>
 
 <body>
 
-<header>
+  <header>
     <div class="logo">AUREX CAPITAL</div>
 
     <nav>
-        <a href="index.html">Home</a>
-        <a href="dashboard.html">Dashboard</a>
-        <a href="investments.html">Plans</a>
+      <a href="index.html">Home</a>
+      <a href="dashboard.html">Dashboard</a>
+      <a href="investments.html">Investments</a>
+      <a href="deposit.html">Deposit</a>
+      <a href="withdraw.html">Withdraw</a>
     </nav>
-</header>
+  </header>
 
-<main class="container">
+  <main class="container">
 
-    <section class="heading">
-        <h1>My Profile</h1>
-        <p>View your demonstration account information.</p>
-    </section>
-
-    <div class="notice">
-        <strong>DEMO PROFILE:</strong>
-        The information below is sample data for website
-        design purposes. This page does not access a real user account.
+    <div class="heading">
+      <div class="tag">Account Centre</div>
+      <h1>My Profile</h1>
+      <p class="subtitle">
+        View your profile information and account preferences.
+      </p>
     </div>
 
-    <section class="profile-card">
+    <section class="card">
+      <div class="profile-header">
+        <div class="avatar">A</div>
 
-        <div class="avatar">D</div>
-
-        <h2 class="username">Demo User</h2>
-
-        <p class="status">Demonstration Account</p>
-
-        <div class="row">
-            <span>Full Name</span>
-            <span>Demo User</span>
+        <div>
+          <h2 style="margin-bottom: 0;">Account Holder</h2>
+          <p>Aurex Capital Member</p>
+          <span class="status">Profile Preview</span>
         </div>
+      </div>
 
-        <div class="row">
-            <span>Username</span>
-            <span>demo_user</span>
-        </div>
+      <h2>Personal Information</h2>
 
-        <div class="row">
-            <span>Email Address</span>
-            <span>demo@example.com</span>
-        </div>
+      <div class="info-row">
+        <span class="info-label">Full Name</span>
+        <span class="info-value">Not provided</span>
+      </div>
 
-        <div class="row">
-            <span>Account Status</span>
-            <span>Demo</span>
-        </div>
+      <div class="info-row">
+        <span class="info-label">Email Address</span>
+        <span class="info-value">Not provided</span>
+      </div>
 
-        <div class="row">
-            <span>Preferred Currency</span>
-            <span>USD ($)</span>
-        </div>
+      <div class="info-row">
+        <span class="info-label">Account Currency</span>
+        <span class="info-value">USD ($)</span>
+      </div>
 
-        <div class="row">
-            <span>Platform</span>
-            <span>Aurex Capital</span>
-        </div>
+      <div class="info-row">
+        <span class="info-label">Account Status</span>
+        <span class="info-value">Not connected</span>
+      </div>
 
+      <div class="notice">
+        Profile information is not connected to a real user account.
+        Your details will not be saved by this page.
+      </div>
     </section>
 
-    <section class="profile-card">
+    <section class="card">
+      <h2>Profile Preferences</h2>
 
-        <h2 class="section-title">Account Settings</h2>
+      <form id="profileForm">
+        <label for="displayName">Display Name</label>
+        <input
+          type="text"
+          id="displayName"
+          placeholder="Enter a display name"
+          maxlength="80"
+          required
+        >
 
-        <div class="actions">
-            <a href="dashboard.html">Dashboard</a>
-            <a href="login.html">Login Page</a>
-            <a href="register.html">Registration Page</a>
-            <a href="investments.html">Investment Plans</a>
-        </div>
+        <label for="email">Email Address</label>
+        <input
+          type="email"
+          id="email"
+          placeholder="Enter your email address"
+          maxlength="254"
+          required
+        >
 
+        <button type="submit" class="button">
+          Preview Changes
+        </button>
+      </form>
+
+      <div class="notice">
+        This form only previews your entries. It does not update
+        an account or store personal information.
+      </div>
     </section>
 
-</main>
+    <section class="card">
+      <h2>Quick Access</h2>
 
-<footer>
+      <a class="secondary" href="dashboard.html">My Dashboard</a>
+      <a class="secondary" href="investments.html">Investment Plans</a>
+      <a class="secondary" href="login.html">Login Page</a>
+      <a class="secondary" href="index.html">Home Page</a>
+    </section>
+
+  </main>
+
+  <footer>
     &copy; 2026 Aurex Capital. All rights reserved.
-    <br>
-    Demonstration website only. No real financial services are provided.
-</footer>
+  </footer>
+
+  <script>
+    document.getElementById("profileForm").addEventListener("submit", function(event) {
+      event.preventDefault();
+
+      const name = document.getElementById("displayName").value.trim();
+      const email = document.getElementById("email").value.trim();
+
+      if (!name || !email) {
+        alert("Please complete both fields.");
+        return;
+      }
+
+      alert(
+        "Profile preview complete for " + name +
+        ". No information has been saved or sent."
+      );
+    });
+  </script>
 
 </body>
-  </html>
+    </html>
